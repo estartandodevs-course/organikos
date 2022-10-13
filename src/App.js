@@ -1,7 +1,5 @@
-import { InputSearch } from './components/InputSearch/index';
-
 function App() {
-  return <InputSearch />;
+  return <h1>Boilerplate CRA - Estartando Devs</h1>;
 }
 
 export default App;
