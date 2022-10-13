@@ -30,7 +30,6 @@ export const Container = styled.div`
   border-radius: 100%;
 
   ${({ size }) => css`
-    ${console.log(size)}
     ${!!size && modifierContainer[size]()}
   `}
 `;
