@@ -31,17 +31,14 @@ export const Wrapper = styled.div`
 export const Input = styled.input`
   width: 100%;
   height: 100%;
-  background-color: #d4e39c;
+  background-color: #ebf1e7;
   font-size: 14px;
   color: #737871;
   border: 1px solid #737871;
   border-radius: 5px;
   &:focus {
+    background-color: #d4e39c;
     box-shadow: 0 0 0 0;
     outline: 0;
-  }
-
-  @media (max-width: 768px) {
-    background-color: #ebf1e7;
   }
 `;
