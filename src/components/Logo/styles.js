@@ -28,5 +28,9 @@ export const Container = styled.div`
       width: 55px;
       height: 61.05px;
     }
+
+    p {
+      display: none;
+    }
   }
 `;
