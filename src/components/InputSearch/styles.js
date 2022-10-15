@@ -8,7 +8,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #558b2f;
+  background: ${({ theme }) => theme.palettes.primaryGreen.main};
 `;
 
 export const Wrapper = styled.div`
@@ -16,10 +16,20 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 47%;
   height: 48px;
-  background: #d4e39c;
-  gap: 12px;
+  background: ${({ theme }) => theme.palettes.secondaryStraw.v6};
   border: 1px solid #737871;
   border-radius: 5px;
+
+  img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    position: absolute;
+    z-index: 10;
+    border: none;
+    background: transparent;
+    outline: none;
+  }
 
   @media (max-width: 768px) {
     background-color: #ebf1e7;
@@ -36,8 +46,9 @@ export const Input = styled.input`
   color: #737871;
   border: 1px solid #737871;
   border-radius: 5px;
+  padding: 0 40px;
   &:focus {
-    background-color: #d4e39c;
+    background-color: ${({ theme }) => theme.palettes.secondaryStraw.v6};
     box-shadow: 0 0 0 0;
     outline: 0;
   }
