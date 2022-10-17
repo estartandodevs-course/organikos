@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Container, Wrapper } from './styles';
 
-export const InputRange = () => {
-  const [rangeValue, setRangeValue] = useState(2);
+export const InputRange = ({ initialRange }) => {
+  const [rangeValue, setRangeValue] = useState(initialRange);
 
   return (
     <Container>
