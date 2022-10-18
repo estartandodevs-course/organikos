@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ButtonStyled = styled.button`
-  width: 179px;
-  height: 36px;
+  width: 100%;
+  height: 100px;
   border: none;
   background-color: ${({ backgroundColor, theme }) => backgroundColor || theme.palettes.primaryGreen.main};
   color: ${({ theme }) => theme.palettes.secondaryStraw.v6};
