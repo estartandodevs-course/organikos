@@ -12,7 +12,7 @@ export const CardSeller = ({ seller }) => {
     <Wrapper>
       <SellerAvatar>
         <Avatar size="small" backgroundColor={theme.palettes.primaryGreen.v4} />
-        <span>{seller.location}</span>
+        <span>0 km</span>
       </SellerAvatar>
 
       <MarketWrapper>
