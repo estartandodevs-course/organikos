@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: ${({ theme }) => theme.body.fontSizeText};
   }
 
-  ol, ul {
+  ol, ul, li {
 	list-style: none;
 }
 `;
