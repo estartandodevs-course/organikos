@@ -1,5 +1,6 @@
 import { Avatar } from '../Avatar';
 import { Tags } from '../Tags';
+import { Rating } from '../Rating';
 import { Wrapper, CategoriesWrapper, MarketInfos, MarketWrapper, SellerAvatar } from './styles';
 import { useTheme } from 'styled-components';
 import { useState } from 'react';
@@ -19,7 +20,7 @@ export const CardSeller = ({ seller }) => {
         <MarketInfos>
           <div>
             {/* temporario enquanto ainda não existe o componente estrela */}
-            <p>ESTRELA</p>
+            <Rating size="small" rating={seller?.rating} />
             <h2>{seller.name}</h2>
           </div>
           <img
