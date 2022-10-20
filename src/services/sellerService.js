@@ -1,5 +1,9 @@
-import { sellerApi } from './sellerApi';
+import { api } from './api';
 
-export const getSeller = sellerId => {
-  return sellerApi.get(`/${sellerId}`);
+export const getAllSeller = () => {
+  return api.get(`/seller`);
+};
+
+export const getSeller = id => {
+  return api.get(`/seller/${id}`);
 };
