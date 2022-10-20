@@ -1,5 +1,7 @@
+import { Routers } from './routes/index';
+
 function App() {
-  return <h1>Boilerplate CRA - Estartando Devs</h1>;
+  return <Routers />;
 }
 
 export default App;
