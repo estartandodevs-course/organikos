@@ -25,7 +25,7 @@ export const CardSeller = ({ seller }) => {
           <img
             src={isFavorite ? 'assets/icons/icons-card/heartFill.svg' : '/assets/icons/icons-card/heart.svg'}
             alt="coração favoritar"
-            onClick={() => setIsFavorite(!isFavorite)}
+            onClick={() => setIsFavorite(prev => !prev)}
           />
         </MarketInfos>
 
