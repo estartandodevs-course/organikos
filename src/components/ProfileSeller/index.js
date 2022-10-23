@@ -45,7 +45,7 @@ export const ProfileSeller = ({ to }) => {
             {seller.contact.address.street}, n*{seller.contact.address.number} - {seller.contact.address.neighborhood},
             {seller.contact.address.city}
           </InfoSeller>
-          <Km>{seller.rating}km</Km>
+          <Km>3km</Km>
         </Box>
       </Wrapper>
       <Crate>
