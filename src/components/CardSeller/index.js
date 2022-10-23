@@ -21,7 +21,7 @@ export const CardSeller = ({ seller }) => {
           <div>
             {/* temporario enquanto ainda não existe o componente estrela */}
             <Rating size="small" rating={seller?.rating} />
-            <h2>{seller.name}</h2>
+            <h2>{seller.contact.name}</h2>
           </div>
           <img
             src={isFavorite ? 'assets/icons/icons-card/heartFill.svg' : '/assets/icons/icons-card/heart.svg'}
