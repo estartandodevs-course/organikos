@@ -2,9 +2,10 @@ import { StarContainer } from './styles';
 import { v4 as uuidv4 } from 'uuid';
 
 export const Rating = ({ rating = 0, size, children }) => {
-  const starRating = new Array(rating).fill(1);
+  const ratingNumber = parseFloat(rating);
+  const starRating = new Array(Math.round(ratingNumber)).fill(1);
 
-  if (rating < 5) {
+  if (ratingNumber < 5) {
     for (let i = 0; i <= 5; i++) {
       if (i > starRating.length) {
         starRating.push(0);
