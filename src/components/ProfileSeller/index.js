@@ -6,7 +6,7 @@ import { useTheme } from 'styled-components';
 import { Container, Wrapper, NameSeller, InfoSeller, Km, Box, Crate } from './styles';
 import { Link } from 'react-router-dom';
 
-export const ProfileSeller = ({ to }) => {
+export const ProfileSeller = ({ to = '#' }) => {
   const [seller, setSeller] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -50,9 +50,9 @@ export const ProfileSeller = ({ to }) => {
       </Wrapper>
       <Crate>
         <Link to={to}>
-          <img src="assets/icons/back-icon.svg" alt="back icon" />
+          <img src="../assets/icons/back-icon.svg" alt="back icon" />
         </Link>
-        <img src="assets/icons/icons-profile/info.svg" alt="info icon" />
+        <img src="../assets/icons/icons-profile/info.svg" alt="info icon" />
       </Crate>
     </Container>
   );
