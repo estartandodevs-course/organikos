@@ -6,7 +6,7 @@ import { useTheme } from 'styled-components';
 import { Container, Wrapper, NameSeller, InfoSeller, Km, Box, Crate } from './styles';
 import { Link } from 'react-router-dom';
 
-export const CardRickAndMorty = ({ to }) => {
+export const ProfileSeller = ({ to }) => {
   const [seller, setSeller] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -45,7 +45,7 @@ export const CardRickAndMorty = ({ to }) => {
             {seller.contact.address.street}, n*{seller.contact.address.number} - {seller.contact.address.neighborhood},
             {seller.contact.address.city}
           </InfoSeller>
-          <Km>{seller.rating[0]}km</Km>
+          <Km>{seller.rating}km</Km>
         </Box>
       </Wrapper>
       <Crate>
