@@ -4,6 +4,7 @@ import { Rating } from '../Rating';
 import { Wrapper, CategoriesWrapper, MarketInfos, MarketWrapper, SellerAvatar } from './styles';
 import { useTheme } from 'styled-components';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const CardSeller = ({ seller }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -21,7 +22,9 @@ export const CardSeller = ({ seller }) => {
           <div>
             {/* temporario enquanto ainda não existe o componente estrela */}
             <Rating size="small" rating={seller?.rating} />
-            <h2>{seller.contact.name}</h2>
+            <Link to={`/seller/${seller.sellerId}`}>
+              <h2>{seller.contact.name}</h2>
+            </Link>
           </div>
           <img
             src={isFavorite ? 'assets/icons/icons-card/heartFill.svg' : '/assets/icons/icons-card/heart.svg'}

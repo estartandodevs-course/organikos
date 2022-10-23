@@ -19,4 +19,9 @@ export const GlobalStyles = createGlobalStyle`
   ol, ul, li {
 	list-style: none;
 }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+ 
 `;
