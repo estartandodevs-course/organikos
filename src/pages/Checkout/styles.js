@@ -25,6 +25,4 @@ export const Box = styled.div`
   max-width: 180px;
   gap: 16px;
   margin: 50px auto 60px auto;
-  margin-top: 50px;
-  margin-bottom: 60px;
 `;
