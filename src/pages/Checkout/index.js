@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTheme } from 'styled-components';
 import { Button } from '../../components/Button';
+import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
 import { Box, Container, Wrapper } from './styles';
@@ -80,6 +81,7 @@ export const Checkout = () => {
           </Button>
         </Link>
       </Box>
+      <Footer>Organikos</Footer>
     </Container>
   );
 };
