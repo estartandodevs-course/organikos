@@ -11,6 +11,7 @@ export const ProfileSeller = ({ to = '#' }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
+  const theme = useTheme();
 
   useEffect(() => {
     (async () => {
@@ -34,7 +35,6 @@ export const ProfileSeller = ({ to = '#' }) => {
     return <div>Carregando...</div>;
   }
 
-  const theme = useTheme();
   return (
     <Container>
       <Wrapper>
