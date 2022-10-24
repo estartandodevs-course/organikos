@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const ButtonStyled = styled.button`
   width: 100%;
-  height: 100%;
+  padding: 10px 0;
   border: none;
   background-color: ${({ backgroundColor, theme }) => backgroundColor || theme.palettes.primaryGreen.main};
-  color: ${({ theme }) => theme.palettes.secondaryStraw.v6};
+  color: ${({ theme, color }) => color || theme.palettes.secondaryStraw.v6};
   box-shadow: ${({ theme }) => theme.palettes.shadow};
   border-radius: 5px;
   font-style: normal;
