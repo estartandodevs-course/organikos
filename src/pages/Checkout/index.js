@@ -72,10 +72,10 @@ export const Checkout = () => {
         </h3>
       </Wrapper>
       <Box>
-        <Link to={`details/${id}`}>
+        <Link to={`/details/${id}`}>
           <Button backgroundColor={theme.palettes.secondaryPurple.main}>Cofirmar Pedido</Button>
         </Link>
-        <Link to={`seller/${id}`}>
+        <Link to={`/seller/${id}`}>
           <Button backgroundColor={theme.palettes.neutral.v2} color={theme.palettes.black}>
             Cancelar
           </Button>
