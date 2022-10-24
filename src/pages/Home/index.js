@@ -8,7 +8,7 @@ import { Footer } from '../../components/Footer';
 export const Home = () => {
   return (
     <Container>
-      <Logo />
+      <Logo icon="bag" to="/bag" />
       <InputRange />
       <InputSearch />
       <Wrapper>
