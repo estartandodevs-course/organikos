@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  footer {
-    position: absolute;
-    bottom: 0;
-  }
-`;
+export const Container = styled.div``;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -27,7 +22,9 @@ export const Wrapper = styled.div`
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 180px;
   gap: 16px;
-  width: 179px;
-  margin: 32px auto 88px auto;
+  margin: 50px auto 60px auto;
+  margin-top: 50px;
+  margin-bottom: 60px;
 `;
