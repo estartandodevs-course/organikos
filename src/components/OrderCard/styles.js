@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CardWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: 314px;
+  width: 100%;
   border-radius: 8px;
   padding: 16px;
   background-color: ${({ theme }) => theme.palettes.primaryGreen.v6};

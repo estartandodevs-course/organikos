@@ -30,5 +30,13 @@ export const Box = styled.div`
   flex-direction: column;
   max-width: 180px;
   gap: 16px;
-  margin: 50px auto 60px auto;
+  margin: 24px auto 60px auto;
+`;
+
+export const Crate = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 40px 0 0;
+  gap: 47px;
 `;

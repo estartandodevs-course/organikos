@@ -1,19 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  gap: 16px;
-  margin: 8px 16px;
-  overflow-x: scroll;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
-`;
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -30,6 +16,10 @@ export const ImageContainer = styled.div`
   background-color: ${({ theme }) => theme.palettes.neutral.v4};
   border-radius: 8px;
   gap: 8px;
+
+  & > img:nth-child(2n + 1) {
+    width: ${({ size }) => size || '32px'};
+  }
 `;
 
 export const InfoProduct = styled.div`

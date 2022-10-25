@@ -1,7 +1,12 @@
+import { SellersContextProvider } from './contexts/SellersContext';
 import { Routers } from './routes/index';
 
 function App() {
-  return <Routers />;
+  return (
+    <SellersContextProvider>
+      <Routers />
+    </SellersContextProvider>
+  );
 }
 
 export default App;

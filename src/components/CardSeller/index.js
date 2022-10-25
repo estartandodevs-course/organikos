@@ -20,7 +20,6 @@ export const CardSeller = ({ seller }) => {
       <MarketWrapper>
         <MarketInfos>
           <div>
-            {/* temporario enquanto ainda não existe o componente estrela */}
             <Rating size="small" rating={seller?.rating} />
             <Link to={`/seller/${seller.sellerId}`}>
               <h2>{seller.contact.name}</h2>
