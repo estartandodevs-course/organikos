@@ -23,7 +23,7 @@ export const Feedback = () => {
       </Wrapper>
       <Box>
         <h3>Avalie aqui os produtos recebidos</h3>
-        <Rating rating={ratingNumber} setRatingNumber={setRatingNumber} />
+        <Rating size="big" rating={ratingNumber} setRatingNumber={setRatingNumber} />
         <Link to="/">
           <p>Avaliar mais tarde</p>
         </Link>
