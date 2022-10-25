@@ -57,15 +57,15 @@ export const Checkout = () => {
           Forma de pagamento:
           <span>{mock[0][2]}</span>
         </p>
-        <p>
-          Detalhes da compra:
+        <ul>
+          <p>Detalhes da compra:</p>
           {mock[0][3].map(item => (
             <>
               <br />
-              <span key={item}>{item}</span>
+              <li key={item}>{item}</li>
             </>
           ))}
-        </p>
+        </ul>
         <h3>
           Total da compra:
           <span>R${mock[0][4]}</span>
