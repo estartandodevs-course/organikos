@@ -1,24 +1,23 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTheme } from 'styled-components';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
-import { Box, Container, Wrapper } from './styles';
+import { Box, Container, Crate, Wrapper } from './styles';
 import { infoOrder } from '../../mocks/infoOrder';
 
-export const Checkout = () => {
-  const { id } = useParams();
+export const Details = () => {
   const theme = useTheme();
 
   return (
     <Container>
       <Logo icon="home" to="/" />
-      <Title icon="block" text="Informações sobre a compra" to="/seller/:id" />
+      <Title icon="block" text="Compra Finalizada" to="/checkout/:id" />
       <Wrapper>
         <p>
-          Fale com o produtor:
-          <span>{infoOrder[0][0]}</span>
+          Status do Pedido:
+          <span>{infoOrder[0][5]}</span>
         </p>
         <p>
           Forma de entrega:
@@ -37,19 +36,14 @@ export const Checkout = () => {
             </>
           ))}
         </ul>
-        <h3>
-          Total da compra:
-          <span>R${infoOrder[0][4]}</span>
-        </h3>
+        <Crate>
+          <h3>Total da compra: R${infoOrder[0][4]}</h3>
+          <p>Fale com o produtor: {infoOrder[0][0]}</p>
+        </Crate>
       </Wrapper>
       <Box>
-        <Link to={`/details/${id}`}>
-          <Button backgroundColor={theme.palettes.secondaryPurple.main}>Cofirmar Pedido</Button>
-        </Link>
-        <Link to={`/seller/${id}`}>
-          <Button backgroundColor={theme.palettes.neutral.v2} color={theme.palettes.black}>
-            Cancelar
-          </Button>
+        <Link to="/feedback">
+          <Button backgroundColor={theme.palettes.secondaryPurple.main}>Pedido Recebido</Button>
         </Link>
       </Box>
       <Footer>Organikos</Footer>
