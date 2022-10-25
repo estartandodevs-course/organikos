@@ -1,17 +1,7 @@
 import { Container, ImageContainer, InfoProduct, Wrapper } from './styles';
+import { products } from '../../mocks/products';
 
 export const ProductCard = () => {
-  const products = [
-    ['/assets/images/images-products/banana.png', 'Banana', '100g', 'R$00,00'],
-    ['/assets/images/images-products/carrot.png', 'Carrot', '100g', 'R$00,00'],
-    ['/assets/images/images-products/chili.png', 'Chili', '100g', 'R$00,00'],
-    ['/assets/images/images-products/eggplant.png', 'Eggplant', '100g', 'R$00,00'],
-    ['/assets/images/images-products/eggs.png', 'Eggs', '100g', 'R$00,00'],
-    ['/assets/images/images-products/onion.png', 'Onion', '100g', 'R$00,00'],
-    ['/assets/images/images-products/potato.png', 'Potato', '100g', 'R$00,00'],
-    ['/assets/images/images-products/tomato.png', 'Tomato', '100g', 'R$00,00'],
-  ];
-
   return (
     <Container>
       {products.map(product => (
