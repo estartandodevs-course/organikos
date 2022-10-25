@@ -7,9 +7,10 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body, html {
-    height: 100%;
+  body, html, #root{
     width: 100%;
+    height: 100%;
+    min-height: 100vh;
     background-color: ${({ theme }) => theme.palettes.white};
     font-family: ${({ theme }) => theme.body.fontFamily};
     font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
@@ -23,5 +24,4 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
- 
 `;
