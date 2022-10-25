@@ -5,9 +5,12 @@ import { OrderCard } from '../../components/OrderCard';
 import { Title } from '../../components/Title';
 import { Box, Container, Crate, Wrapper } from './styles';
 import { historyList } from '../../mocks/historyList';
-import { RatingFeedback } from '../../components/RatingFeedback';
+import { Rating } from '../../components/Rating';
+import { useState } from 'react';
 
 export const Feedback = () => {
+  const [ratingNumber, setRatingNumber] = useState(0);
+
   return (
     <Container>
       <Logo icon="home" to="/" />
@@ -20,7 +23,7 @@ export const Feedback = () => {
       </Wrapper>
       <Box>
         <h3>Avalie aqui os produtos recebidos</h3>
-        <RatingFeedback />
+        <Rating rating={ratingNumber} setRatingNumber={setRatingNumber} />
         <Link to="/">
           <p>Avaliar mais tarde</p>
         </Link>

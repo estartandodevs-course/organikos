@@ -23,6 +23,7 @@ export const StarContainer = styled.div`
   flex-direction: column;
   text-align: center;
   word-wrap: break-word;
+  cursor: pointer;
 
   & > ul {
     width: 100%;
