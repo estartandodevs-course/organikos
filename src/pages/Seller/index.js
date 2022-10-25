@@ -1,6 +1,5 @@
 import { InputSearch } from '../../components/InputSearch';
 import { Title } from '../../components/Title/index';
-import { ProductCard } from '../../components/ProductCard';
 import { ProfileSeller } from '../../components/ProfileSeller';
 import { Bag } from '../../components/Bag';
 import { Checklist } from '../../components/Checklist';
@@ -12,6 +11,7 @@ import { Box, Container, Wrapper } from './styles';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { useTheme } from 'styled-components';
+import { ProductCardList } from '../../components/ProductCardList';
 
 export const Seller = () => {
   const [seller, setSeller] = useState({});
@@ -46,7 +46,7 @@ export const Seller = () => {
     <Container>
       <ProfileSeller to="/" />
       <InputSearch />
-      <ProductCard />
+      <ProductCardList />
       <Title text="Total da compra - R$102,50" />
       <Bag />
       <Title text="Formas de Entrega" />
