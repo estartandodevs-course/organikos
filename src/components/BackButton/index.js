@@ -3,11 +3,11 @@ import { ButtonStyled } from './styles';
 
 export const BackButton = ({ children }) => {
   return (
-    <ButtonStyled>
-      <Link to="/">
+    <Link to="/">
+      <ButtonStyled>
         <img src="../assets/icons/back-icon-straw.svg" alt="seta para voltar" />
-      </Link>
-      {children}
-    </ButtonStyled>
+        {children}
+      </ButtonStyled>
+    </Link>
   );
 };
