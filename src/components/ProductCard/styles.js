@@ -16,6 +16,10 @@ export const ImageContainer = styled.div`
   background-color: ${({ theme }) => theme.palettes.neutral.v4};
   border-radius: 8px;
   gap: 8px;
+
+  & > img:nth-child(2n + 1) {
+    width: ${({ size }) => size || '32px'};
+  }
 `;
 
 export const InfoProduct = styled.div`
