@@ -1,7 +1,6 @@
 import { StarContainer } from './styles';
-import { v4 as uuidv4 } from 'uuid';
 
-export const Rating = ({ rating = 0, size, children }) => {
+export const Rating = ({ rating = 0, size, children, setRatingNumber = () => {} }) => {
   const ratingNumber = parseFloat(rating);
   const starRating = new Array(Math.round(ratingNumber)).fill(1);
 
@@ -17,13 +16,13 @@ export const Rating = ({ rating = 0, size, children }) => {
     <StarContainer size={size}>
       <h2>{children}</h2>
       <ul>
-        {starRating.map(item =>
-          item ? (
-            <img key={uuidv4()} src="/assets/icons/starFill.svg" />
-          ) : (
-            <img key={uuidv4()} src="/assets/icons/star.svg" />
-          )
-        )}
+        {starRating.map((item, index) => (
+          <img
+            key={index}
+            src={item ? 'assets/icons/starFill.svg' : '/assets/icons/star.svg'}
+            onClick={() => setRatingNumber(index + 1)}
+          />
+        ))}
       </ul>
     </StarContainer>
   );
