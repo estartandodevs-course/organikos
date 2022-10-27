@@ -1,11 +1,14 @@
+import { ModalContextProvider } from './contexts/ModalContext';
 import { SellersContextProvider } from './contexts/SellersContext';
 import { Routers } from './routes/index';
 
 function App() {
   return (
-    <SellersContextProvider>
-      <Routers />
-    </SellersContextProvider>
+    <ModalContextProvider>
+      <SellersContextProvider>
+        <Routers />
+      </SellersContextProvider>
+    </ModalContextProvider>
   );
 }
 
