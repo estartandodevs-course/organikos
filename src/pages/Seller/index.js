@@ -12,6 +12,7 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { useTheme } from 'styled-components';
 import { ProductCardList } from '../../components/ProductCardList';
+import { Modal } from '../../components/Modal';
 
 export const Seller = () => {
   const [seller, setSeller] = useState({});
@@ -67,6 +68,7 @@ export const Seller = () => {
         </Link>
       </Box>
       <Footer> Organikos </Footer>
+      <Modal name={seller.contact.name}>{seller.contact.desc}</Modal>
     </Container>
   );
 };

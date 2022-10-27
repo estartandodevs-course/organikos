@@ -1,15 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSeller } from '../../services/sellerService';
 import { Avatar } from '../Avatar';
 import { useTheme } from 'styled-components';
 import { Container, Wrapper, NameSeller, InfoSeller, Km, Box, Crate } from './styles';
 import { Link } from 'react-router-dom';
+import { ModalContext } from '../../contexts/ModalContext';
 
 export const ProfileSeller = ({ to = '#' }) => {
   const [seller, setSeller] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const { handleModalClose } = useContext(ModalContext);
   const { id } = useParams();
   const theme = useTheme();
 
@@ -52,7 +54,7 @@ export const ProfileSeller = ({ to = '#' }) => {
         <Link to={to}>
           <img src="../assets/icons/back-icon.svg" alt="back icon" />
         </Link>
-        <img src="../assets/icons/icons-profile/info.svg" alt="info icon" />
+        <img onClick={handleModalClose} src="../assets/icons/icons-profile/info.svg" alt="info icon" />
       </Crate>
     </Container>
   );
