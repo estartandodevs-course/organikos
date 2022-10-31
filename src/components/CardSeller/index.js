@@ -15,6 +15,7 @@ export const CardSeller = ({ seller }) => {
       <SellerAvatar>
         <Avatar size="small" backgroundColor={theme.palettes.primaryGreen.v4} />
         <span>0 km</span>
+        {seller?.organic && <img src="../assets/icons/icons-card/produto-organico.svg" alt="selo produto orgânico" />}
       </SellerAvatar>
 
       <MarketWrapper>
