@@ -1,75 +1,101 @@
-import styled from 'styled-components';
-import theme from '../../styles/theme';
+import styled, { css } from 'styled-components';
 
 const h1Medium = styled.h1`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h1.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightMedium};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-size: ${theme.typography.h1.fontSize};
+    font-weight: ${theme.typography.fontWeightMedium};
+    color: ${color || theme.palettes.black};
+    font-family: ${theme.body.fontFamily};
+  `}
 `;
 const h1Regular = styled.h1`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h1.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h1.fontSize};
+    font-weight: ${theme.typography.fontWeightRegular};
+    color: ${color || theme.palettes.black};
+  `}
 `;
 const h2Medium = styled.p`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h2.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightMedium};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h2.fontSize};
+    font-weight: ${theme.typography.fontWeightMedium};
+    color: ${color || theme.palettes.black};
+  `};
 `;
+
 const h2Regular = styled.p`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h2.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightLight};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h2.fontSize};
+    font-weight: ${theme.typography.fontWeightLight};
+    color: ${color || theme.palettes.black};
+  `}
 `;
+
 const h3Regular = styled.h2`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h3.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h3.fontSize};
+    font-weight: ${theme.typography.fontWeightRegular};
+    color: ${color || theme.palettes.black};
+  `};
 `;
+
 const h4Medium = styled.p`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h4.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightMedium};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h4.fontSize};
+    font-weight: ${theme.typography.fontWeightMedium};
+    color: ${color || theme.palettes.black};
+  `};
 `;
+
 const h4Regular = styled.p`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h4.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h4.fontSize};
+    font-weight: ${theme.typography.fontWeightRegular};
+    color: ${color || theme.palettes.black};
+  `}
 `;
+
 const h4Light = styled.p`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h4.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightLight};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h4.fontSize};
+    font-weight: ${theme.typography.fontWeightLight};
+    color: ${color || theme.palettes.black};
+  `}
 `;
 
 const h4LightSublinhado = styled.p`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h4.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightLight};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h4.fontSize};
+    font-weight: ${theme.typography.fontWeightLight};
+    color: ${color || theme.palettes.black};
+  `}
   text-decoration: underline;
 `;
 
 const h4LightSublinadoWeb = styled.p`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h2.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightLight};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h2.fontSize};
+    font-weight: ${theme.typography.fontWeightLight};
+    color: ${color || theme.palettes.black};
+  `}
   text-decoration: underline;
 `;
 const h5Medium = styled.p`
-  font-family: ${({ theme }) => theme.body.fontFamily};
-  font-size: ${({ theme }) => theme.typography.h5.fontSize};
-  font-weight: ${({ theme }) => theme.typography.fontWeightLight};
-  color: ${({ color }) => color || theme.palettes.black};
+  ${({ theme, color }) => css`
+    font-family: ${theme.body.fontFamily};
+    font-size: ${theme.typography.h5.fontSize};
+    font-weight: ${theme.typography.fontWeightLight};
+    color: ${color || theme.palettes.black};
+  `}
 `;
 
 const Typographies = {
