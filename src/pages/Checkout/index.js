@@ -4,9 +4,9 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
-import { Box, Container, Crate, Receptacle, Wrapper } from './styles';
-import { infoOrder } from '../../mocks/infoOrder';
+import { Box, Container, Crate, Receptacle } from './styles';
 import { InputSearch } from '../../components/InputSearch';
+import { Infos } from '../../components/Infos';
 
 export const Checkout = () => {
   const { id } = useParams();
@@ -20,33 +20,7 @@ export const Checkout = () => {
       </Receptacle>
       <Title icon="block" text="Informações sobre a compra" to="/seller/:id" />
       <Crate>
-        <Wrapper>
-          <p>
-            Fale com o produtor:
-            <span>{infoOrder[0][0]}</span>
-          </p>
-          <p>
-            Forma de entrega:
-            <span>{infoOrder[0][1]}</span>
-          </p>
-          <p>
-            Forma de pagamento:
-            <span>{infoOrder[0][2]}</span>
-          </p>
-          <ul>
-            <p>Detalhes da compra:</p>
-            {infoOrder[0][3].map(item => (
-              <>
-                <br />
-                <li key={item}>{item}</li>
-              </>
-            ))}
-          </ul>
-          <h3>
-            Total da compra:
-            <span>R${infoOrder[0][4]}</span>
-          </h3>
-        </Wrapper>
+        <Infos />
         <Box>
           <Link to={`/details/${id}`}>
             <Button backgroundColor={theme.palettes.secondaryPurple.main}>Cofirmar Pedido</Button>
