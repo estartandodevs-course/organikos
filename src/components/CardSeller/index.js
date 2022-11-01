@@ -6,8 +6,12 @@ import { useTheme } from 'styled-components';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export const CardSeller = ({ seller }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+export const CardSeller = ({
+  seller = {
+    rating: false,
+  },
+}) => {
+  const [isFavorite, setIsFavorite] = useState(seller.rating);
   const theme = useTheme();
 
   return (
@@ -15,6 +19,7 @@ export const CardSeller = ({ seller }) => {
       <SellerAvatar>
         <Avatar size="small" backgroundColor={theme.palettes.primaryGreen.v4} />
         <span>0 km</span>
+        {seller?.organic && <img src="../assets/icons/icons-card/produto-organico.svg" alt="selo produto orgânico" />}
       </SellerAvatar>
 
       <MarketWrapper>
