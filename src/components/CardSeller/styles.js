@@ -42,6 +42,7 @@ export const MarketInfos = styled.div`
 
   & > img {
     padding: 16px;
+    cursor: pointer;
   }
 `;
 
