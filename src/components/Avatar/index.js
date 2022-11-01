@@ -1,9 +1,11 @@
 import { Container } from './styles';
 
-export const Avatar = props => {
+export const Avatar = ({ imageUrl = '', username = '', ...restProps }) => {
+  const imageFile = imageUrl ? imageUrl : '/assets/icons/icons-profile/profile.svg';
+
   return (
-    <Container {...props}>
-      <img src="/assets/icons/icons-profile/profile.svg" alt="profile icon" />
+    <Container {...restProps}>
+      <img src={imageFile} alt={username || 'Profile Icon'} />
     </Container>
   );
 };

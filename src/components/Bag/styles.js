@@ -11,4 +11,8 @@ export const Container = styled.div`
     font-weight: 500;
     color: ${({ theme }) => theme.palettes.secondaryPurple.main};
   }
+
+  a {
+    cursor: pointer;
+  }
 `;

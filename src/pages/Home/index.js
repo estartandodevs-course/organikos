@@ -6,12 +6,20 @@ import { SellerList } from '../../components/SellerList';
 import { Footer } from '../../components/Footer';
 import { categories } from '../../mocks/categories';
 import { Tags } from '../../components/Tags';
+import { useState } from 'react';
 
 export const Home = () => {
+  const initialRange = 0;
+  const [rangeValue, setRangeValue] = useState(initialRange);
+
+  const handleChange = e => {
+    setRangeValue(e.target.value);
+  };
+
   return (
     <Container>
       <Logo icon="bag" to="/bag" />
-      <InputRange initialRange={2} />
+      <InputRange value={rangeValue} onChange={handleChange} />
       <FilterWrapper>
         <Tags categorys={categories} />
       </FilterWrapper>

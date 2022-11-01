@@ -6,8 +6,12 @@ import { useTheme } from 'styled-components';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export const CardSeller = ({ seller }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+export const CardSeller = ({
+  seller = {
+    rating: false,
+  },
+}) => {
+  const [isFavorite, setIsFavorite] = useState(seller.rating);
   const theme = useTheme();
 
   return (
