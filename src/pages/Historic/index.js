@@ -1,5 +1,6 @@
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
+import { historyList } from '../../mocks/historyList';
 import { OrderCardList } from '../../components/OrderCardList';
 import { Title } from '../../components/Title';
 import { Container } from './styles';
@@ -9,7 +10,7 @@ export const Historic = () => {
     <Container>
       <Logo icon="home" to="/" />
       <Title text="Historico de Pedidos" icon="block" to="/" />
-      <OrderCardList />
+      <OrderCardList historyList={historyList} />
       <Footer>Organikos</Footer>
     </Container>
   );
