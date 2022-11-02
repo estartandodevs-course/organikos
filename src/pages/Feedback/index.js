@@ -3,10 +3,12 @@ import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { OrderCard } from '../../components/OrderCard';
 import { Title } from '../../components/Title';
-import { Box, Container, Crate, Wrapper } from './styles';
+import { Box, Case, Cashier, Container, Crate, Receptacle, Wrapper } from './styles';
 import { historyList } from '../../mocks/historyList';
 import { Rating } from '../../components/Rating';
 import { useState } from 'react';
+import { infoOrder } from '../../mocks/infoOrder';
+import { InputSearch } from '../../components/InputSearch';
 
 export const Feedback = () => {
   const [ratingNumber, setRatingNumber] = useState(0);
@@ -14,20 +16,56 @@ export const Feedback = () => {
   return (
     <Container>
       <Logo icon="home" to="/" />
+      <Receptacle>
+        <InputSearch />
+      </Receptacle>
       <Title text="Avalie sua Compra" />
-      <Wrapper>
-        <p>Pedido Recebido:</p>
-        <Crate>
-          <OrderCard history={historyList[0]} />
-        </Crate>
-      </Wrapper>
-      <Box>
-        <h3>Avalie aqui os produtos recebidos</h3>
-        <Rating size="big" rating={ratingNumber} setRatingNumber={setRatingNumber} />
-        <Link to="/">
-          <p>Avaliar mais tarde</p>
-        </Link>
-      </Box>
+      <Crate>
+        <Wrapper>
+          <p>
+            Fale com o produtor:
+            <span>{infoOrder[0][0]}</span>
+          </p>
+          <p>
+            Status do Pedido:
+            <span>{infoOrder[0][5]}</span>
+          </p>
+          <p>
+            Forma de entrega:
+            <span>{infoOrder[0][1]}</span>
+          </p>
+          <p>
+            Forma de pagamento:
+            <span>{infoOrder[0][2]}</span>
+          </p>
+          <ul>
+            <p>Detalhes da compra:</p>
+            {infoOrder[0][3].map(item => (
+              <>
+                <br />
+                <li key={item}>{item}</li>
+              </>
+            ))}
+          </ul>
+          <h3>
+            Total da compra:
+            <span>R${infoOrder[0][4]}</span>
+          </h3>
+        </Wrapper>
+        <Case>
+          <h3>Pedido Recebido:</h3>
+          <Cashier>
+            <OrderCard history={historyList[0]} />
+          </Cashier>
+        </Case>
+        <Box>
+          <h3>Avalie aqui os produtos recebidos</h3>
+          <Rating size="big" rating={ratingNumber} setRatingNumber={setRatingNumber} />
+          <Link to="/">
+            <p>Avaliar mais tarde</p>
+          </Link>
+        </Box>
+      </Crate>
       <Footer>Organikos</Footer>
     </Container>
   );
