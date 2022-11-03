@@ -10,6 +10,17 @@ export const Wrapper = styled.div`
   border-radius: 8px;
 `;
 
+export const WrapperSkeleton = styled.div`
+  display: flex;
+  padding: 8px;
+  max-width: 330px;
+  height: auto;
+  border-radius: 8px;
+  gap: 10px;
+  box-shadow: ${({ theme }) => theme.palettes.shadow};
+  background-color: ${({ theme }) => theme.palettes.primaryGreen.v5};
+`;
+
 export const SellerAvatar = styled.div`
   display: flex;
   gap: 8px;
