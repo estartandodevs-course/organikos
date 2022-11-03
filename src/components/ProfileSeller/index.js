@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { ModalContext } from '../../contexts/ModalContext';
 import { ProfileSellerSkeleton } from './ProfileSellerSkeleton';
 
-export const ProfileSeller = ({ to = '#' }) => {
+export const ProfileSeller = ({ to = '/' }) => {
   const [seller, setSeller] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { handleModalClose } = useContext(ModalContext);
