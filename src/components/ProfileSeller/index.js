@@ -6,11 +6,11 @@ import { useTheme } from 'styled-components';
 import { Container, Wrapper, NameSeller, InfoSeller, Km, Box, Crate } from './styles';
 import { Link } from 'react-router-dom';
 import { ModalContext } from '../../contexts/ModalContext';
+import { ProfileSellerSkeleton } from './ProfileSellerSkeleton';
 
 export const ProfileSeller = ({ to = '#' }) => {
   const [seller, setSeller] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
   const { handleModalClose } = useContext(ModalContext);
   const { id } = useParams();
   const theme = useTheme();
@@ -21,20 +21,16 @@ export const ProfileSeller = ({ to = '#' }) => {
       try {
         const { data } = await getSeller(id);
         setSeller(data);
-      } catch {
-        setIsError(true);
+      } catch (error) {
+        console.log(error);
       } finally {
         setIsLoading(false);
       }
     })();
   }, [id]);
 
-  if (isError) {
-    return <div>Ooops! Algo de errado aconteceu!</div>;
-  }
-
   if (isLoading) {
-    return <div>Carregando...</div>;
+    return <ProfileSellerSkeleton />;
   }
 
   return (
