@@ -40,7 +40,7 @@ export const Seller = () => {
   }
 
   if (isLoading) {
-    return <div>Carregando...</div>;
+    return <></>;
   }
 
   return (

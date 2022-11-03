@@ -44,3 +44,7 @@ export const InfoProduct = styled.div`
     margin-top: 8px;
   }
 `;
+
+export const Touchable = styled.div`
+  cursor: pointer;
+`;

@@ -14,15 +14,11 @@ export const Wrapper = styled.section`
   justify-content: center;
   gap: 25px;
   flex-wrap: wrap;
-  margin: 10px 0px 84px;
-
-  & > div {
-    width: 152px;
-  }
+  margin: 10px 0px 85px;
 `;
 
 export const Box = styled.div`
-  width: 243px;
+  width: 240px;
   margin: 0 auto;
-  margin-bottom: 54px;
+  margin-bottom: 55px;
 `;

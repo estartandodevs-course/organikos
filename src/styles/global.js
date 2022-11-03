@@ -24,4 +24,26 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+
+ 
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #AED581 #ffffff;
+  }
+
+  
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #AED581;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
 `;
