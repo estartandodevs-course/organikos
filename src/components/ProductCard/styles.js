@@ -9,6 +9,15 @@ export const Wrapper = styled.div`
   border-radius: 8px;
 `;
 
+export const WrapperSkeleton = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 208px;
+  padding: 8px;
+  background-color: ${({ theme }) => theme.palettes.primaryGreen.v5};
+  border-radius: 8px;
+`;
+
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: space-between;
