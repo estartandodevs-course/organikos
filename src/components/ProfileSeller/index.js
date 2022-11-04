@@ -1,17 +1,16 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSeller } from '../../services/sellerService';
 import { Avatar } from '../Avatar';
 import { useTheme } from 'styled-components';
 import { Container, Wrapper, NameSeller, InfoSeller, Km, Box, Crate } from './styles';
 import { Link } from 'react-router-dom';
-import { ModalContext } from '../../contexts/ModalContext';
 import { ProfileSellerSkeleton } from './ProfileSellerSkeleton';
+import ReactTooltip from 'react-tooltip';
 
 export const ProfileSeller = ({ to = '/' }) => {
   const [seller, setSeller] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const { handleModalClose } = useContext(ModalContext);
   const { id } = useParams();
   const theme = useTheme();
 
@@ -50,7 +49,14 @@ export const ProfileSeller = ({ to = '/' }) => {
         <Link to={to}>
           <img src="../assets/icons/back-icon.svg" alt="back icon" />
         </Link>
-        <img onClick={handleModalClose} src="../assets/icons/icons-profile/info.svg" alt="info icon" />
+        <img
+          data-place="top"
+          data-tip={seller.contact.desc}
+          data-for="tooltip"
+          src="../assets/icons/icons-profile/info.svg"
+          alt="info icon"
+        />
+        <ReactTooltip id="tooltip" type="success" effect="solid" border />
       </Crate>
     </Container>
   );
