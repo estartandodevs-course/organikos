@@ -19,26 +19,29 @@ export const CardSeller = ({
       <SellerAvatar>
         <Avatar size="small" backgroundColor={theme.palettes.primaryGreen.v4} />
         <span>0 km</span>
-        {seller?.organic && <img src="../assets/icons/icons-card/produto-organico.svg" alt="selo produto orgânico" />}
+        {seller?.certificate && (
+
+          <img src="../assets/icons/icons-card/produto-organico.svg" alt="selo produto orgânico" />
+        )}
       </SellerAvatar>
 
       <MarketWrapper>
         <MarketInfos>
           <div>
-            <Rating size="small" rating={seller?.rating} />
+            <Rating size="small" rating={seller?.contact?.rating} />
             <Link to={`/seller/${seller.sellerId}`}>
               <h2>{seller.contact.name}</h2>
             </Link>
           </div>
           <img
-            src={isFavorite ? 'assets/icons/icons-card/heartFill.svg' : '/assets/icons/icons-card/heart.svg'}
+            src={isFavorite ? '/assets/icons/icons-card/heart.svg' : 'assets/icons/icons-card/heartFill.svg'}
             alt="coração favoritar"
             onClick={() => setIsFavorite(prev => !prev)}
           />
         </MarketInfos>
 
         <CategoriesWrapper>
-          <Tags categorys={seller.category} />
+          <Tags categorys={seller?.contact?.category} />
         </CategoriesWrapper>
       </MarketWrapper>
     </Wrapper>
