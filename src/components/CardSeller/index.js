@@ -20,7 +20,6 @@ export const CardSeller = ({
         <Avatar size="small" backgroundColor={theme.palettes.primaryGreen.v4} />
         <span>0 km</span>
         {seller?.certificate && (
-
           <img src="../assets/icons/icons-card/produto-organico.svg" alt="selo produto orgânico" />
         )}
       </SellerAvatar>
