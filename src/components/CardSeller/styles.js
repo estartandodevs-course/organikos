@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   padding: 8px;
-  max-width: 330px;
-  height: auto;
+  width: 330px;
+  height: 150px;
   background-color: ${({ theme }) => theme.palettes.primaryGreen.v6};
   box-shadow: ${({ theme }) => theme.palettes.shadow};
   border-radius: 8px;
@@ -13,10 +13,10 @@ export const Wrapper = styled.div`
 export const WrapperSkeleton = styled.div`
   display: flex;
   padding: 8px;
-  max-width: 330px;
-  height: auto;
+  width: 330px;
+  height: 150px;
   border-radius: 8px;
-  gap: 10px;
+  gap: 5px;
   box-shadow: ${({ theme }) => theme.palettes.shadow};
   background-color: ${({ theme }) => theme.palettes.primaryGreen.v5};
 `;
