@@ -20,6 +20,7 @@ export const CardSeller = ({
         <Avatar size="small" backgroundColor={theme.palettes.primaryGreen.v4} />
         <span>0 km</span>
         {seller?.certificate && (
+
           <img src="../assets/icons/icons-card/produto-organico.svg" alt="selo produto orgânico" />
         )}
       </SellerAvatar>
@@ -27,7 +28,7 @@ export const CardSeller = ({
       <MarketWrapper>
         <MarketInfos>
           <div>
-            <Rating size="small" rating={seller?.rating} />
+            <Rating size="small" rating={seller?.contact?.rating} />
             <Link to={`/seller/${seller.sellerId}`}>
               <h2>{seller.contact.name}</h2>
             </Link>
