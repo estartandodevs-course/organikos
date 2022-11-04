@@ -19,7 +19,8 @@ export const CardSeller = ({
       <SellerAvatar>
         <Avatar size="small" backgroundColor={theme.palettes.primaryGreen.v4} />
         <span>0 km</span>
-        {seller?.contact?.organic && (
+        {seller?.certificate && (
+
           <img src="../assets/icons/icons-card/produto-organico.svg" alt="selo produto orgânico" />
         )}
       </SellerAvatar>
@@ -40,7 +41,7 @@ export const CardSeller = ({
         </MarketInfos>
 
         <CategoriesWrapper>
-          <Tags categorys={seller.category} />
+          <Tags categorys={seller?.contact?.category} />
         </CategoriesWrapper>
       </MarketWrapper>
     </Wrapper>
