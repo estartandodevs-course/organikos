@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { getSeller } from '../services/sellerService';
+import { getAllSeller } from '../services/sellerService';
 
 export const SellersContext = createContext();
 
@@ -8,15 +8,10 @@ export const SellersContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const generateSellerPromises = () =>
-      Array(12)
-        .fill()
-        .map((_, index) => getSeller(index + 1).then(response => response.data));
+    const sellersPromise = getAllSeller();
 
-    const sellerPromises = generateSellerPromises();
-
-    Promise.all(sellerPromises).then(seller => {
-      setSellerList(seller);
+    sellersPromise.then(sellers => {
+      setSellerList(sellers.data);
       setIsLoading(false);
     });
   }, []);
