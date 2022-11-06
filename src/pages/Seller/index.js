@@ -51,9 +51,9 @@ export const Seller = () => {
       <Title text="Total da compra - R$102,50" />
       <Bag />
       <Title text="Formas de Entrega" />
-      <Checklist optionsList={seller.contact.distribution} name="entrega" />
+      <Checklist optionsList={seller?.distribution} name="entrega" />
       <Title text="Formas de Pagamento" />
-      <Checklist optionsList={seller.contact.payment} name="pagamento" />
+      <Checklist optionsList={seller?.payment} name="pagamento" />
       <Wrapper>
         <InputForm size="medium" type="text" text="Insira aqui seu cupom de desconto" />
       </Wrapper>
