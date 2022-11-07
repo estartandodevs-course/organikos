@@ -4,10 +4,13 @@ import { ProductCardSkeleton } from '../ProductCard/ProductCardSkeleton';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getProductsBySeller } from '../../services/sellerService';
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
 export const ProductCardList = () => {
   const [productsList, setProductsList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { addProductToCart, removeProductToCart } = useContext(CartContext);
   const { id } = useParams();
 
   useEffect(() => {
@@ -24,7 +27,12 @@ export const ProductCardList = () => {
     <Container>
       {loading && <ProductCardSkeleton />}
       {productsList.map(product => (
-        <ProductCard key={product?.id} product={product} />
+        <ProductCard
+          key={product?.id}
+          product={product}
+          onPlus={() => addProductToCart(product)}
+          onMinus={() => removeProductToCart(product)}
+        />
       ))}
     </Container>
   );
