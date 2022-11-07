@@ -37,7 +37,6 @@ export const SellerAvatar = styled.div`
 export const MarketWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
   width: 100%;
 `;
 
@@ -62,6 +61,7 @@ export const MarketInfos = styled.div`
 
 export const CategoriesWrapper = styled.ul`
   display: flex;
+  margin-top: auto;
 
   & > ul {
     flex-wrap: wrap;
