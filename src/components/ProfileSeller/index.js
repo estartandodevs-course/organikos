@@ -37,10 +37,10 @@ export const ProfileSeller = ({ to = '/' }) => {
       <Wrapper>
         <Avatar size="big" backgroundColor={theme.palettes.primaryGreen.v4} />
         <Box>
-          <NameSeller>{seller.contact.name} </NameSeller>
+          <NameSeller>{seller?.contact?.name} </NameSeller>
           <InfoSeller>
-            {seller.contact.address.street}, n*{seller.contact.address.number} - {seller.contact.address.neighborhood},
-            {seller.contact.address.city}
+            {seller?.address?.street}, n*{seller?.address?.number} - {seller?.address?.neighborhood},
+            {seller?.address?.city}
           </InfoSeller>
           <Km>3km</Km>
         </Box>
@@ -51,7 +51,7 @@ export const ProfileSeller = ({ to = '/' }) => {
         </Link>
         <img
           data-place="top"
-          data-tip={seller.contact.desc}
+          data-tip={seller?.contact?.desc}
           data-for="tooltip"
           src="../assets/icons/icons-profile/info.svg"
           alt="info icon"
