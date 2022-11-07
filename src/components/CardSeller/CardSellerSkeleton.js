@@ -17,9 +17,9 @@ export const CardSellerSkeleton = ({ number = 12 }) => {
               <Skeleton width={100} />
               <Skeleton width={170} height={20} />
             </div>
-            <Skeleton style={{ marginLeft: '20px' }} width={25} height={25} />
+            <Skeleton style={{ marginRight: '10px' }} width={25} height={25} />
           </MarketInfos>
-          <CategoriesWrapper>
+          <CategoriesWrapper style={{ marginTop: '15px' }}>
             <Skeleton width={210} height={20} count={2} />
           </CategoriesWrapper>
         </MarketWrapper>

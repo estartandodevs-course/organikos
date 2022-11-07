@@ -19,6 +19,8 @@ export const WrapperSkeleton = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  width: 100%;
+  height: 82px;
   display: flex;
   justify-content: space-between;
   align-items: center;
