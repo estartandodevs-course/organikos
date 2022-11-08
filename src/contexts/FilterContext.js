@@ -19,8 +19,6 @@ export const FilterContextProvider = ({ children }) => {
     }
   };
 
-  console.log(tagFilter);
-
   return (
     <FilterContext.Provider value={{ searchTerm, setSearchTerm, tagFilter, handleIsTouchable }}>
       {children}
