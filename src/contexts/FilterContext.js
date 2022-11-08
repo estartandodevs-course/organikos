@@ -7,14 +7,17 @@ export const FilterContextProvider = ({ children }) => {
   const [tagFilter, setTagFilter] = useState([]);
 
   const handleIsTouchable = value => {
-    if (tagFilter !== []) {
-      const newArray = [...tagFilter];
+    const newArray = [...tagFilter];
+    if (tagFilter?.length) {
       const index = newArray.indexOf(value);
       if (index === -1) {
         newArray.push(value);
       } else {
         newArray.splice(index, 1);
       }
+      setTagFilter(newArray);
+    } else {
+      newArray.push(value);
       setTagFilter(newArray);
     }
   };
