@@ -1,7 +1,5 @@
 import { InputSearch } from '../../components/InputSearch';
-// import { Title } from '../../components/Title/index';
 import { ProfileSeller } from '../../components/ProfileSeller';
-// import { Bag } from '../../components/Bag';
 import { Checklist } from '../../components/Checklist';
 import { Link, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
