@@ -6,20 +6,22 @@ import { FilterContext } from '../../contexts/FilterContext';
 export const Tags = ({ categorys, touchable = false }) => {
   const { handleIsTouchable, tagFilter } = useContext(FilterContext);
 
+  const colorTag = currentCategory => {
+    if (!touchable) {
+      return tags[currentCategory]?.[0];
+    } else if (tagFilter.includes(currentCategory)) {
+      return '#923FA5';
+    } else {
+      return tags[currentCategory]?.[0];
+    }
+  };
+
   return (
     <Container>
       {categorys?.map(currentCategory => (
         <Wrapper
           key={currentCategory}
-          backgroundColor={() => {
-            if (!touchable) {
-              return tags[currentCategory]?.[0];
-            } else if (tagFilter.includes(currentCategory)) {
-              return '#923FA5';
-            } else {
-              return tags[currentCategory]?.[0];
-            }
-          }}
+          backgroundColor={() => colorTag(currentCategory)}
           onClick={() => {
             if (touchable) handleIsTouchable(currentCategory);
           }}
