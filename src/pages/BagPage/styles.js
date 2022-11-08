@@ -13,3 +13,7 @@ export const Box = styled.div`
   margin: 0 auto;
   margin-bottom: 55px;
 `;
+
+export const Crate = styled.div`
+  margin-bottom: 84px;
+`;
