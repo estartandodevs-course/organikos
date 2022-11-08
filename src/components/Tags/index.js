@@ -7,13 +7,7 @@ export const Tags = ({ categorys, touchable = false }) => {
   const { handleIsTouchable, tagFilter } = useContext(FilterContext);
 
   const colorTag = currentCategory => {
-    if (!touchable) {
-      return tags[currentCategory]?.[0];
-    } else if (tagFilter.includes(currentCategory)) {
-      return '#923FA5';
-    } else {
-      return tags[currentCategory]?.[0];
-    }
+    return touchable && tagFilter.includes(currentCategory) ? '#923FA5' : tags[currentCategory]?.[0];
   };
 
   return (
