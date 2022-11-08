@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ButtonStyled = styled.button`
-  width: 100%;
+  width: 179px;
   padding: 10px 0;
   border: none;
   background-color: ${({ backgroundColor, theme }) => backgroundColor || theme.palettes.primaryGreen.main};
