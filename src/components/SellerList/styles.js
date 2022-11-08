@@ -6,4 +6,5 @@ export const Ul = styled.ul`
   gap: 33px 110px;
   flex-wrap: wrap;
   margin-top: 37px;
+  min-height: 60vh;
 `;
