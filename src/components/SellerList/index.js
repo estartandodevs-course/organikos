@@ -11,9 +11,7 @@ export const SellerList = () => {
   const { searchTerm } = useContext(FilterContext);
 
   const sellerFiltered = sellerList.filter(seller => {
-    if (searchTerm === '') {
-      return seller;
-    } else if (seller?.contact?.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+    if (seller?.contact?.name.toLowerCase().includes(searchTerm.toLowerCase())) {
       return seller;
     }
   });
