@@ -62,7 +62,6 @@ export const Wrapper = styled.div`
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
-  min-width: 179px;
   gap: 16px;
   margin: 50px auto 60px auto;
 `;
