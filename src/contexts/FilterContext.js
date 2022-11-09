@@ -7,21 +7,15 @@ export const FilterContextProvider = ({ children }) => {
   const [tagFilter, setTagFilter] = useState([]);
 
   const handleIsTouchable = value => {
-    const newArray = [...tagFilter];
-    if (tagFilter?.length) {
-      const index = newArray.indexOf(value);
-      if (index === -1) {
-        newArray.push(value);
-      } else {
-        newArray.splice(index, 1);
-      }
-      setTagFilter(newArray);
+    let copyArray = [...tagFilter];
+    const index = copyArray.indexOf(value);
+    if (index < 0) {
+      copyArray.push(value);
     } else {
-      newArray.push(value);
-      setTagFilter(newArray);
+      copyArray.splice(index, 1);
     }
+    setTagFilter(copyArray);
   };
-
   return (
     <FilterContext.Provider value={{ searchTerm, setSearchTerm, tagFilter, handleIsTouchable }}>
       {children}
