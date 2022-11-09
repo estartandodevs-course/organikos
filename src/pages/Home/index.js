@@ -7,7 +7,6 @@ import { Footer } from '../../components/Footer';
 import { categories } from '../../mocks/categories';
 import { Tags } from '../../components/Tags';
 import { useState } from 'react';
-import { FilterContextProvider } from '../../contexts/FilterContext';
 
 export const Home = () => {
   const initialRange = 0;
@@ -18,19 +17,17 @@ export const Home = () => {
   };
 
   return (
-    <FilterContextProvider>
-      <Container>
-        <Logo icon="bag" to="/bag" />
-        <InputRange value={rangeValue} onChange={handleChange} />
-        <FilterWrapper>
-          <Tags categorys={categories} touchable={true} />
-        </FilterWrapper>
-        <InputSearch />
-        <Wrapper>
-          <SellerList />
-        </Wrapper>
-        <Footer>Organikos</Footer>
-      </Container>
-    </FilterContextProvider>
+    <Container>
+      <Logo icon="bag" to="/bag" />
+      <InputRange value={rangeValue} onChange={handleChange} />
+      <FilterWrapper>
+        <Tags categorys={categories} touchable={true} />
+      </FilterWrapper>
+      <InputSearch />
+      <Wrapper>
+        <SellerList />
+      </Wrapper>
+      <Footer>Organikos</Footer>
+    </Container>
   );
 };
