@@ -26,7 +26,7 @@ export const Seller = () => {
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
   const theme = useTheme();
-  const { removeAllProductsBySeller } = useContext(CartContext);
+  const { removeAllProductsBySeller, cartList } = useContext(CartContext);
 
   useEffect(() => {
     (async () => {
@@ -61,7 +61,7 @@ export const Seller = () => {
       <Crate>
         <Left>
           <InfoSeller to="/" />
-          <ProductsCardWrapper backGroundColor={theme.palettes.primaryGreen.v5} />
+          <ProductsCardWrapper backGroundColor={theme.palettes.primaryGreen.v5} productsCart={cartList} id={id} />
         </Left>
         <Right>
           <FilterWrapper>
