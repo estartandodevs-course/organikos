@@ -126,3 +126,11 @@ export const Bunker = styled.div`
     }
   }
 `;
+
+export const Garner = styled.div`
+  @media (max-width: 890px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
