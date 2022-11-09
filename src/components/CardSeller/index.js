@@ -27,9 +27,9 @@ export const CardSeller = ({
       <MarketWrapper>
         <MarketInfos>
           <div>
-            <Rating size="small" rating={seller?.contact?.rating} />
-            <Link to={`/seller/${seller.sellerId}`}>
-              <h2>{seller.contact.name}</h2>
+            <Rating size="small" rating={seller?.rating} />
+            <Link to={`/seller/${seller?.sellerId}`}>
+              <h2>{seller?.contact?.name}</h2>
             </Link>
           </div>
           <img
@@ -40,7 +40,7 @@ export const CardSeller = ({
         </MarketInfos>
 
         <CategoriesWrapper>
-          <Tags categorys={seller?.contact?.category} />
+          <Tags categorys={seller?.category} />
         </CategoriesWrapper>
       </MarketWrapper>
     </Wrapper>

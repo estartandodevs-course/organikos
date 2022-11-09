@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTheme } from 'styled-components';
 import { getSeller } from '../../services/sellerService';
 import { Avatar } from '../Avatar';
-import { useTheme } from 'styled-components';
-import { Container, Wrapper, NameSeller, InfoSeller, Km, Box, Crate } from './styles';
-import { Link } from 'react-router-dom';
-import { ProfileSellerSkeleton } from './ProfileSellerSkeleton';
-import ReactTooltip from 'react-tooltip';
+import { ProfileSellerSkeleton } from '../ProfileSeller/ProfileSellerSkeleton';
+import { Box, Container, Crate, Info, Km, NameSeller, Wrapper } from './styles';
 
-export const ProfileSeller = ({ to = '/' }) => {
+export const InfoSeller = () => {
   const [seller, setSeller] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
@@ -38,25 +36,15 @@ export const ProfileSeller = ({ to = '/' }) => {
         <Avatar size="big" backgroundColor={theme.palettes.primaryGreen.v4} />
         <Box>
           <NameSeller>{seller?.contact?.name} </NameSeller>
-          <InfoSeller>
+          <Info>
             {seller?.address?.street}, n*{seller?.address?.number} - {seller?.address?.neighborhood},
             {seller?.address?.city}
-          </InfoSeller>
+          </Info>
           <Km>3km</Km>
         </Box>
       </Wrapper>
       <Crate>
-        <Link to={to}>
-          <img src="../assets/icons/back-icon.svg" alt="back icon" />
-        </Link>
-        <img
-          data-place="top"
-          data-tip={seller?.contact?.desc}
-          data-for="tooltip"
-          src="../assets/icons/icons-profile/info.svg"
-          alt="info icon"
-        />
-        <ReactTooltip id="tooltip" type="success" effect="solid" border />
+        <p>{seller?.contact?.desc}</p>
       </Crate>
     </Container>
   );

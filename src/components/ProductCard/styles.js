@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 208px;
+  width: 170px;
   padding: 8px;
   background-color: ${({ theme }) => theme.palettes.primaryGreen.v6};
   border-radius: 8px;
@@ -19,12 +19,13 @@ export const WrapperSkeleton = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  width: 100%;
+  height: 82px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.palettes.neutral.v4};
   border-radius: 8px;
-  gap: 8px;
 
   & > img:nth-child(2n + 1) {
     width: ${({ size }) => size || '32px'};

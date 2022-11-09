@@ -37,13 +37,14 @@ export const SellerAvatar = styled.div`
 export const MarketWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  width: 100%;
 `;
 
 export const MarketInfos = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
   & > div {
     padding: 4px 8px;
@@ -52,6 +53,7 @@ export const MarketInfos = styled.div`
   }
 
   & > img {
+    align-self: start;
     padding: 16px;
     cursor: pointer;
   }
@@ -59,6 +61,7 @@ export const MarketInfos = styled.div`
 
 export const CategoriesWrapper = styled.ul`
   display: flex;
+  margin-top: auto;
 
   & > ul {
     flex-wrap: wrap;

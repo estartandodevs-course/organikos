@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 
 export const ChecklistWrapper = styled.div`
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   padding: 16px;
   gap: 16px;
 

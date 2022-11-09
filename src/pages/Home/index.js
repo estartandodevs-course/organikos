@@ -21,7 +21,7 @@ export const Home = () => {
       <Logo icon="bag" to="/bag" />
       <InputRange value={rangeValue} onChange={handleChange} />
       <FilterWrapper>
-        <Tags categorys={categories} />
+        <Tags categorys={categories} touchable={true} />
       </FilterWrapper>
       <InputSearch />
       <Wrapper>

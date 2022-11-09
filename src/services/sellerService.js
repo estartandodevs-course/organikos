@@ -7,3 +7,7 @@ export const getAllSeller = () => {
 export const getSeller = id => {
   return api.get(`/seller/${id}`);
 };
+
+export const getProductsBySeller = id => {
+  return api.get(`/product/${id}`);
+};
