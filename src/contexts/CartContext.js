@@ -21,8 +21,10 @@ export const CartContextProvider = ({ children }) => {
     if (!productExist) {
       newCartList.push({ ...product, qtd: 1 });
     } else {
+      const priceBase = productExist.price / productExist.qtd;
       productExist.qtd += 1;
-      productExist.price = parseFloat(product.price) * productExist.qtd;
+      productExist.price = priceBase + productExist.price;
+      productExist.quantity *= productExist.qtd;
     }
     setCartList(newCartList);
   };
@@ -30,19 +32,18 @@ export const CartContextProvider = ({ children }) => {
   const removeProductToCart = product => {
     const newCartList = [...cartList];
     const productExist = newCartList.find(
-      element => element.id === product?.id && element?.seller_id !== product.seller_id
+      element => element.id === product?.id && element?.seller_id === product?.seller_id
     );
 
     if (productExist && productExist.qtd > 1) {
+      const priceBase = productExist.price / productExist.qtd;
       productExist.qtd -= 1;
-      productExist.price = parseFloat(product.price) * productExist.qtd;
-      setCartList(newCartList);
+      productExist.price = productExist.price - priceBase;
+      productExist.quantity *= productExist.qtd;
     } else {
-      const arrayFiltered = newCartList.filter(
-        element => element.id !== product?.id && element?.seller_id !== product.seller_id
-      );
-      setCartList(arrayFiltered);
+      newCartList.splice(newCartList.indexOf(productExist), 1);
     }
+    setCartList(newCartList);
   };
 
   const removeAllProductsBySeller = seller => {
