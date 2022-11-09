@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { getSeller } from '../../services/sellerService';
 import { InputForm } from '../../components/InputForm';
-import { Bin, Box, Bunker, Case, Container, Crate, FilterWrapper, Kit, Left, Right, Safe } from './styles';
+import { Bin, Box, Bunker, Case, Container, Crate, FilterWrapper, Garner, Kit, Left, Right, Safe } from './styles';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { useTheme } from 'styled-components';
@@ -74,12 +74,16 @@ export const Seller = () => {
             <Title text="Formas de Entrega" />
           </Bin>
           <h5>Formas de Entrega</h5>
-          <Checklist optionsList={seller?.distribution} name="entrega" />
+          <Garner>
+            <Checklist optionsList={seller?.distribution} name="entrega" />
+          </Garner>
           <Bin>
             <Title text="Formas de Pagamento" />
           </Bin>
           <h5>Formas de Pagamento</h5>
-          <Checklist optionsList={seller?.payment} name="pagamento" />
+          <Garner>
+            <Checklist optionsList={seller?.payment} name="pagamento" />
+          </Garner>
           <Safe>
             <InputForm size="medium" type="text" text="Insira aqui seu cupom de desconto" />
             <Bunker>
