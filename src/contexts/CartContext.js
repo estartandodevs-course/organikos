@@ -19,12 +19,10 @@ export const CartContextProvider = ({ children }) => {
     );
 
     if (!productExist) {
-      newCartList.push({ ...product, qtd: 1 });
+      newCartList.push({ ...product, cost: product.price });
     } else {
-      const priceBase = productExist.price / productExist.qtd;
-      productExist.qtd += 1;
-      productExist.price = priceBase + productExist.price;
-      productExist.quantity *= productExist.qtd;
+      productExist.quantity += 1;
+      productExist.cost = productExist.price * productExist.quantity;
     }
     setCartList(newCartList);
   };
@@ -35,15 +33,18 @@ export const CartContextProvider = ({ children }) => {
       element => element.id === product?.id && element?.seller_id === product?.seller_id
     );
 
-    if (productExist && productExist.qtd > 1) {
-      const priceBase = productExist.price / productExist.qtd;
-      productExist.qtd -= 1;
-      productExist.price = productExist.price - priceBase;
-      productExist.quantity *= productExist.qtd;
+    if (productExist && productExist.quantity > 1) {
+      productExist.quantity -= 1;
+      productExist.cost = productExist.price * productExist.quantity;
     } else {
       newCartList.splice(newCartList.indexOf(productExist), 1);
     }
     setCartList(newCartList);
+  };
+
+  const getProductsBySeller = id => {
+    const productsCartFiltered = cartList.filter(product => product.seller_id === id);
+    return productsCartFiltered;
   };
 
   const removeAllProductsBySeller = seller => {
@@ -53,7 +54,9 @@ export const CartContextProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartList, addProductToCart, removeProductToCart, removeAllProductsBySeller }}>
+    <CartContext.Provider
+      value={{ cartList, addProductToCart, removeProductToCart, removeAllProductsBySeller, getProductsBySeller }}
+    >
       {children}
     </CartContext.Provider>
   );
