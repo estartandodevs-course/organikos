@@ -15,7 +15,7 @@ export const ProductCard = ({ product, size, onPlus, onMinus }) => {
       <InfoProduct>
         <p>{product?.name}</p>
         <p>{product?.quantity + product?.measure}</p>
-        <span>R${product?.price.toFixed(2)}</span>
+        <span>R${product?.cost?.toFixed(2) || product?.price.toFixed(2)}</span>
       </InfoProduct>
     </Wrapper>
   );
