@@ -6,11 +6,13 @@ import { useEffect, useState } from 'react';
 import { getProductsBySeller } from '../../services/sellerService';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import { FilterContext } from '../../contexts/FilterContext';
 
 export const ProductCardList = () => {
   const [productsList, setProductsList] = useState([]);
   const [loading, setLoading] = useState(true);
   const { addProductToCart, removeProductToCart } = useContext(CartContext);
+  const { searchTerm } = useContext(FilterContext);
   const { id } = useParams();
 
   useEffect(() => {
@@ -23,10 +25,16 @@ export const ProductCardList = () => {
       .catch(error => console.log(error));
   }, [id]);
 
+  const productsFiltered = productsList?.filter(product => {
+    if (product?.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return product;
+    }
+  });
+
   return (
     <Container>
       {loading && <ProductCardSkeleton />}
-      {productsList.map(product => (
+      {productsFiltered.map(product => (
         <ProductCard
           key={product?.id}
           product={product}
