@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  height: 174px;
   width: 170px;
   padding: 8px;
   background-color: ${({ theme }) => theme.palettes.primaryGreen.v6};
@@ -13,6 +14,7 @@ export const WrapperSkeleton = styled.div`
   display: flex;
   flex-direction: column;
   width: 208px;
+  height: 174px;
   padding: 8px;
   background-color: ${({ theme }) => theme.palettes.primaryGreen.v5};
   border-radius: 8px;
