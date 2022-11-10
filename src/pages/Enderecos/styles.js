@@ -36,16 +36,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Box = styled.div``;
-
-export const BoxSwitch = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100px;
-`;
-
 export const Container = styled.div`
   width: 100%;
   display: flex;
