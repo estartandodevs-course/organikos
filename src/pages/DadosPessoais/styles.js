@@ -45,3 +45,15 @@ export const BoxSwitch = styled.div`
   text-align: center;
   width: 100px;
 `;
+
+export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  @media (max-width: 890px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+`;
