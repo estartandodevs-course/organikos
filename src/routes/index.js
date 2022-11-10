@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { BagPage, Checkout, Details, Feedback, Historic, Home, Seller } from '../pages';
+import { DadosPessoais } from '../pages/DadosPessoais';
 
 export const Routers = () => {
   return (
