@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { BagPage, Checkout, Details, Feedback, Historic, Home, Seller } from '../pages';
 import { DadosPessoais } from '../pages/DadosPessoais';
+import { Enderecos } from '../pages/Enderecos';
 
 export const Routers = () => {
   return (
@@ -13,6 +14,7 @@ export const Routers = () => {
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/historic" element={<Historic />} />
       <Route path="/dadospessoais" element={<DadosPessoais />} />
+      <Route path="/enderecos" element={<Enderecos />} />
     </Routes>
   );
 };
