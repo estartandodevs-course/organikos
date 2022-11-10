@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useTheme } from 'styled-components';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
@@ -41,12 +42,16 @@ export const DadosPessoais = () => {
           </Wrapper>
         </Left>
         <Right>
-          <Button type="submit" backgroundColor={theme.palettes.secondaryPurple.main}>
-            Salvar
-          </Button>
-          <Button type="button" backgroundColor={theme.palettes.neutral.v2} color={theme.palettes.black}>
-            Cancelar
-          </Button>
+          <Link to="/enderecos">
+            <Button type="submit" backgroundColor={theme.palettes.secondaryPurple.main}>
+              Salvar
+            </Button>
+          </Link>
+          <Link to="/">
+            <Button type="button" backgroundColor={theme.palettes.neutral.v2} color={theme.palettes.black}>
+              Cancelar
+            </Button>
+          </Link>
         </Right>
       </FormContainer>
       <Footer>Organikos</Footer>
