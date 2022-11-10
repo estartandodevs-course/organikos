@@ -48,8 +48,6 @@ export const MarketInfos = styled.div`
 
   & > div {
     padding: 4px 8px;
-    font-size: ${({ theme }) => theme.typography.h4.fontSize};
-    font-weight: ${({ theme }) => theme.typography.fontWeightMedium};
   }
 
   & > img {
