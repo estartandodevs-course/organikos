@@ -5,13 +5,10 @@ import { Wrapper, CategoriesWrapper, MarketInfos, MarketWrapper, SellerAvatar } 
 import { useTheme } from 'styled-components';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Typography } from '../Typography';
 
-export const CardSeller = ({
-  seller = {
-    rating: false,
-  },
-}) => {
-  const [isFavorite, setIsFavorite] = useState(seller.rating);
+export const CardSeller = ({ seller }) => {
+  const [isFavorite, setIsFavorite] = useState(seller?.rating);
   const theme = useTheme();
 
   return (
@@ -29,7 +26,7 @@ export const CardSeller = ({
           <div>
             <Rating size="small" rating={seller?.rating} />
             <Link to={`/seller/${seller?.sellerId}`}>
-              <h2>{seller?.contact?.name}</h2>
+              <Typography variant={'h2Medium'}>{seller?.contact?.name}</Typography>
             </Link>
           </div>
           <img

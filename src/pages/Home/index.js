@@ -18,7 +18,7 @@ export const Home = () => {
 
   return (
     <Container>
-      <Logo icon="bag" to="/bag" />
+      <Logo icon="bag" to="/historic" />
       <InputRange value={rangeValue} onChange={handleChange} />
       <FilterWrapper>
         <Tags categorys={categories} touchable={true} />

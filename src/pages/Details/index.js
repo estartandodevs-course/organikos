@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useTheme } from 'styled-components';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
@@ -10,6 +10,7 @@ import { InputSearch } from '../../components/InputSearch';
 
 export const Details = () => {
   const theme = useTheme();
+  const { id } = useParams();
 
   return (
     <Container>
@@ -38,11 +39,11 @@ export const Details = () => {
           </p>
           <ul>
             <p>Detalhes da compra:</p>
-            {infoOrder[0][3].map(item => (
-              <>
+            {infoOrder[0][3].map((item, index) => (
+              <li key={index}>
                 <br />
-                <li key={item}>{item}</li>
-              </>
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
           <h3>
@@ -51,7 +52,7 @@ export const Details = () => {
           </h3>
         </Wrapper>
         <Box>
-          <Link to="/feedback">
+          <Link to={`/historic/${id}/feedback`}>
             <Button backgroundColor={theme.palettes.secondaryPurple.main}>Pedido Recebido</Button>
           </Link>
         </Box>
