@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { BagPage, Checkout, Details, Feedback, Historic, Home, Seller } from '../pages';
+import { DadosPessoais } from '../pages/DadosPessoais';
 
 export const Routers = () => {
   return (
@@ -11,6 +12,7 @@ export const Routers = () => {
       <Route path="/details/:id" element={<Details />} />
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/historic" element={<Historic />} />
+      <Route path="/dadospessoais" element={<DadosPessoais />} />
     </Routes>
   );
 };
