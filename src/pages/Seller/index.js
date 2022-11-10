@@ -19,6 +19,8 @@ import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
 import { Bag } from '../../components/Bag';
 import { InfoSeller } from '../../components/InfoSeller';
+import { MainWrapper } from '../../templates/MainWrapper';
+import { LogoAnimation } from '../../components/LogoAnimation';
 
 export const Seller = () => {
   const [seller, setSeller] = useState({});
@@ -26,7 +28,7 @@ export const Seller = () => {
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
   const theme = useTheme();
-  const { removeAllProductsBySeller } = useContext(CartContext);
+  const { removeAllProductsBySeller, cartTotal } = useContext(CartContext);
 
   useEffect(() => {
     (async () => {
@@ -47,8 +49,13 @@ export const Seller = () => {
   }
 
   if (isLoading) {
-    return <></>;
+    return (
+      <MainWrapper>
+        <LogoAnimation />
+      </MainWrapper>
+    );
   }
+
   return (
     <Container>
       <Kit>
@@ -69,8 +76,8 @@ export const Seller = () => {
           </FilterWrapper>
           <ProductCardList />
           <Bin>
-            <Title text="Total da compra - R$102,50" />
-            <Bag />
+            <Title text={`Total da compra - R$${cartTotal.toFixed(2)}`} />
+            <Bag userId={id} />
             <Title text="Formas de Entrega" />
           </Bin>
           <h5>Formas de Entrega</h5>
@@ -87,7 +94,7 @@ export const Seller = () => {
           <Safe>
             <InputForm size="medium" type="text" text="Insira aqui seu cupom de desconto" />
             <Bunker>
-              <h4>Total da compra - R$102,50</h4>
+              <h4>{`Total da compra - R$${cartTotal.toFixed()}`}</h4>
               <Box>
                 <Link to={`/seller/${id}/checkout`}>
                   <Button backgroundColor={theme.palettes.secondaryPurple.main}> Comprar </Button>
@@ -107,7 +114,9 @@ export const Seller = () => {
         </Right>
       </Crate>
       <Footer> Organikos </Footer>
-      <Modal name={seller.contact.name}>{seller.contact.desc}</Modal>
+      <Modal name={seller?.contact?.name}>{seller?.contact?.desc}</Modal>
     </Container>
   );
 };
+
+Seller.displayName = 'Seller';

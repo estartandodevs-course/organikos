@@ -10,7 +10,7 @@ export const Routers = () => {
       <Route path="/" element={<Home />} />
       <Route path="/seller/:id" element={<Seller />} />
       <Route path="/seller/:id/checkout" element={<Checkout />} />
-      <Route path="/bag" element={<BagPage />} />
+      <Route path="/bag/:id" element={<BagPage />} />
       <Route path="/historic" element={<Historic />} />
       <Route path="/historic/:id" element={<Details />} />
       <Route path="/historic/:id/feedback" element={<Feedback />} />

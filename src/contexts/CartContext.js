@@ -17,15 +17,16 @@ export const CartContextProvider = ({ children }) => {
     const productExist = newCartList.find(
       element => element?.id === product?.id && element?.seller_id === product.seller_id
     );
-
     if (!productExist) {
-      newCartList.push({ ...product, cost: product.price });
+      newCartList.push({ ...product, quantity: 1, cost: product.price });
     } else {
       productExist.quantity += 1;
       productExist.cost = productExist.price * productExist.quantity;
     }
     setCartList(newCartList);
   };
+
+  const cartTotal = cartList.reduce((acc, curr) => curr.price * curr.quantity + acc, 0);
 
   const removeProductToCart = product => {
     const newCartList = [...cartList];
@@ -55,7 +56,14 @@ export const CartContextProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cartList, addProductToCart, removeProductToCart, removeAllProductsBySeller, getProductsBySeller }}
+      value={{
+        cartList,
+        addProductToCart,
+        removeProductToCart,
+        removeAllProductsBySeller,
+        getProductsBySeller,
+        cartTotal,
+      }}
     >
       {children}
     </CartContext.Provider>
