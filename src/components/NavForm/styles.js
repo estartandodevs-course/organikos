@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 176px;
   width: 100%;
   height: 117px;
   background: ${({ theme }) => theme.palettes.primaryGreen.v6};
