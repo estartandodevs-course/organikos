@@ -35,11 +35,11 @@ export const Checkout = () => {
           </p>
           <ul>
             <p>Detalhes da compra:</p>
-            {infoOrder[0][3].map(item => (
-              <>
+            {infoOrder[0][3].map((item, index) => (
+              <li key={index}>
                 <br />
-                <li key={item}>{item}</li>
-              </>
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
           <h3>
@@ -48,7 +48,7 @@ export const Checkout = () => {
           </h3>
         </Wrapper>
         <Box>
-          <Link to={`/details/${id}`}>
+          <Link to={`/`}>
             <Button backgroundColor={theme.palettes.secondaryPurple.main}>Cofirmar Pedido</Button>
           </Link>
           <Link to={`/seller/${id}`}>

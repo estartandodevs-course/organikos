@@ -65,7 +65,7 @@ export const Seller = () => {
         </Left>
         <Right>
           <FilterWrapper>
-            <Tags categorys={categories} />
+            <Tags categorys={categories} touchable={true} />
           </FilterWrapper>
           <ProductCardList />
           <Bin>
@@ -85,7 +85,7 @@ export const Seller = () => {
             <Bunker>
               <h4>Total da compra - R$102,50</h4>
               <Box>
-                <Link to={`/checkout/${id}`}>
+                <Link to={`/seller/${id}/checkout`}>
                   <Button backgroundColor={theme.palettes.secondaryPurple.main}> Comprar </Button>
                 </Link>
                 <Link to="/">
