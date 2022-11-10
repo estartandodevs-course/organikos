@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { BagPage, Checkout, Details, Feedback, Historic, Home, Seller } from '../pages';
 import { DadosPessoais } from '../pages/DadosPessoais';
 import { Enderecos } from '../pages/Enderecos';
+import { Pagamentos } from '../pages/Pagamentos';
 
 export const Routers = () => {
   return (
