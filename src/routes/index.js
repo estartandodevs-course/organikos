@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { BagPage, Checkout, Details, Feedback, Historic, Home, Seller } from '../pages';
-import { DadosPessoais } from '../pages/DadosPessoais';
-import { Enderecos } from '../pages/Enderecos';
-import { Pagamentos } from '../pages/Pagamentos';
+import { PersonalData } from '../pages/DadosPessoais';
+import { Adresses } from '../pages/Enderecos';
+import { Payments } from '../pages/Pagamentos';
 
 export const Routers = () => {
   return (
@@ -14,6 +14,9 @@ export const Routers = () => {
       <Route path="/historic" element={<Historic />} />
       <Route path="/historic/:id" element={<Details />} />
       <Route path="/historic/:id/feedback" element={<Feedback />} />
+      <Route path="/dadospessoais" element={<PersonalData />} />
+      <Route path="/enderecos" element={<Adresses />} />
+      <Route path="/pagamentos" element={<Payments />} />
     </Routes>
   );
 };

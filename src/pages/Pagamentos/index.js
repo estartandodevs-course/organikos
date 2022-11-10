@@ -7,7 +7,7 @@ import { Logo } from '../../components/Logo';
 import { NavForm } from '../../components/NavForm';
 import { Container, Crate, FormContainer, Left, Right, Wrapper } from './styles';
 
-export const Pagamentos = () => {
+export const Payments = () => {
   const theme = useTheme();
   return (
     <div>

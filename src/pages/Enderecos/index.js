@@ -7,7 +7,7 @@ import { Logo } from '../../components/Logo';
 import { NavForm } from '../../components/NavForm';
 import { Container, Crate, FormContainer, Left, Right, Wrapper } from './styles';
 
-export const Enderecos = () => {
+export const Adresses = () => {
   const theme = useTheme();
   return (
     <div>

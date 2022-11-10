@@ -7,7 +7,7 @@ import { Logo } from '../../components/Logo';
 import { NavForm } from '../../components/NavForm';
 import { FormContainer, Crate, Right, Left, Wrapper, BoxSwitch, Container } from './styles';
 
-export const DadosPessoais = () => {
+export const PersonalData = () => {
   const theme = useTheme();
   return (
     <div>
