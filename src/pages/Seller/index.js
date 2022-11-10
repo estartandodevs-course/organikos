@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { getSeller } from '../../services/sellerService';
 import { InputForm } from '../../components/InputForm';
-import { Bin, Box, Bunker, Case, Container, Crate, FilterWrapper, Kit, Left, Right, Safe } from './styles';
+import { Bin, Box, Bunker, Case, Container, Crate, FilterWrapper, Garner, Kit, Left, Right, Safe } from './styles';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { useTheme } from 'styled-components';
@@ -61,11 +61,11 @@ export const Seller = () => {
       <Crate>
         <Left>
           <InfoSeller to="/" />
-          <ProductsCardWrapper backGroundColor={theme.palettes.primaryGreen.v5} />
+          <ProductsCardWrapper backGroundColor={theme.palettes.primaryGreen.v5} id={id} />
         </Left>
         <Right>
           <FilterWrapper>
-            <Tags categorys={categories} />
+            <Tags categorys={categories} touchable={true} />
           </FilterWrapper>
           <ProductCardList />
           <Bin>
@@ -74,18 +74,22 @@ export const Seller = () => {
             <Title text="Formas de Entrega" />
           </Bin>
           <h5>Formas de Entrega</h5>
-          <Checklist optionsList={seller?.distribution} name="entrega" />
+          <Garner>
+            <Checklist optionsList={seller?.distribution} name="entrega" />
+          </Garner>
           <Bin>
             <Title text="Formas de Pagamento" />
           </Bin>
           <h5>Formas de Pagamento</h5>
-          <Checklist optionsList={seller?.payment} name="pagamento" />
+          <Garner>
+            <Checklist optionsList={seller?.payment} name="pagamento" />
+          </Garner>
           <Safe>
             <InputForm size="medium" type="text" text="Insira aqui seu cupom de desconto" />
             <Bunker>
               <h4>Total da compra - R$102,50</h4>
               <Box>
-                <Link to={`/checkout/${id}`}>
+                <Link to={`/seller/${id}/checkout`}>
                   <Button backgroundColor={theme.palettes.secondaryPurple.main}> Comprar </Button>
                 </Link>
                 <Link to="/">

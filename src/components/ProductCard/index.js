@@ -14,8 +14,8 @@ export const ProductCard = ({ product, size, onPlus, onMinus }) => {
       </ImageContainer>
       <InfoProduct>
         <p>{product?.name}</p>
-        <p>1{product?.measure}</p>
-        <span>R${parseFloat(product?.price).toFixed(2)}</span>
+        <p>{product?.quantity + product?.measure}</p>
+        <span>R${product?.cost?.toFixed(2) || product?.price.toFixed(2)}</span>
       </InfoProduct>
     </Wrapper>
   );

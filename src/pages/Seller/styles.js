@@ -47,6 +47,14 @@ export const FilterWrapper = styled.div`
     gap: 40px;
   }
 
+  & > ul > li {
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    :hover {
+      transform: scale(1.1);
+    }
+  }
+
   @media (max-width: 1024px) {
     display: none;
   }
@@ -124,5 +132,13 @@ export const Bunker = styled.div`
     @media (max-width: 890px) {
       display: none;
     }
+  }
+`;
+
+export const Garner = styled.div`
+  @media (max-width: 890px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;

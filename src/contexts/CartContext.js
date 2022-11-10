@@ -19,10 +19,10 @@ export const CartContextProvider = ({ children }) => {
     );
 
     if (!productExist) {
-      newCartList.push({ ...product, qtd: 1 });
+      newCartList.push({ ...product, cost: product.price });
     } else {
-      productExist.qtd += 1;
-      productExist.price = parseFloat(product.price) * productExist.qtd;
+      productExist.quantity += 1;
+      productExist.cost = productExist.price * productExist.quantity;
     }
     setCartList(newCartList);
   };
@@ -30,19 +30,21 @@ export const CartContextProvider = ({ children }) => {
   const removeProductToCart = product => {
     const newCartList = [...cartList];
     const productExist = newCartList.find(
-      element => element.id === product?.id && element?.seller_id !== product.seller_id
+      element => element.id === product?.id && element?.seller_id === product?.seller_id
     );
 
-    if (productExist && productExist.qtd > 1) {
-      productExist.qtd -= 1;
-      productExist.price = parseFloat(product.price) * productExist.qtd;
-      setCartList(newCartList);
+    if (productExist && productExist.quantity > 1) {
+      productExist.quantity -= 1;
+      productExist.cost = productExist.price * productExist.quantity;
     } else {
-      const arrayFiltered = newCartList.filter(
-        element => element.id !== product?.id && element?.seller_id !== product.seller_id
-      );
-      setCartList(arrayFiltered);
+      newCartList.splice(newCartList.indexOf(productExist), 1);
     }
+    setCartList(newCartList);
+  };
+
+  const getProductsBySeller = id => {
+    const productsCartFiltered = cartList.filter(product => product.seller_id === id);
+    return productsCartFiltered;
   };
 
   const removeAllProductsBySeller = seller => {
@@ -52,7 +54,9 @@ export const CartContextProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartList, addProductToCart, removeProductToCart, removeAllProductsBySeller }}>
+    <CartContext.Provider
+      value={{ cartList, addProductToCart, removeProductToCart, removeAllProductsBySeller, getProductsBySeller }}
+    >
       {children}
     </CartContext.Provider>
   );

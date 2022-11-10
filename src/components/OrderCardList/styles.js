@@ -3,12 +3,17 @@ import styled from 'styled-components';
 export const Container = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  row-gap: 32px;
+  column-gap: 48px;
   justify-content: center;
-  gap: 32px 48px;
-  margin: 115px 0;
+  max-width: 1100px;
+  margin: 115px auto;
+  min-height: 60vh;
 
   & > li {
-    width: 314px;
+    max-width: 314px;
+    width: 100%;
+    height: 104px;
   }
 
   @media (max-width: 768px) {

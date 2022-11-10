@@ -9,7 +9,7 @@ const theme = {
       v3: '#8BC34A',
       v4: '#AED581',
       v5: '#C5E1A5',
-      v6: '#DCEDC8',
+      v6: '#EBF1E7',
     },
     secondaryPurple: {
       main: '#652F8B',
