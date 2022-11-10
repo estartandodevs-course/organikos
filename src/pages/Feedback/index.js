@@ -40,11 +40,11 @@ export const Feedback = () => {
           </p>
           <ul>
             <p>Detalhes da compra:</p>
-            {infoOrder[0][3].map(item => (
-              <>
+            {infoOrder[0][3].map((item, index) => (
+              <li key={index}>
                 <br />
-                <li key={item}>{item}</li>
-              </>
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
           <h3>
