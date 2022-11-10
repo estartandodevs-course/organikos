@@ -59,7 +59,7 @@ export const Enderecos = () => {
                 Salvar
               </Button>
             </Link>
-            <Link to="/">
+            <Link to="/dadospessoais">
               <Button type="button" backgroundColor={theme.palettes.neutral.v2} color={theme.palettes.black}>
                 Cancelar
               </Button>
