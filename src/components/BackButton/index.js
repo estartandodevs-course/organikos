@@ -3,7 +3,7 @@ import { ButtonStyled } from './styles';
 
 export const BackButton = ({ children }) => {
   return (
-    <Link to="/">
+    <Link to="/home">
       <ButtonStyled>
         <img src="/assets/icons/back-icon-straw.svg" alt="seta para voltar" />
         {children}

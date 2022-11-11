@@ -15,6 +15,7 @@ export const ProductsCardWrapper = ({ backGroundColor, id }) => {
             key={product[1] + uuidv4()}
             product={product}
             size="20px"
+            sizeProduct="60px"
             onPlus={() => addProductToCart(product)}
             onMinus={() => removeProductToCart(product)}
           />

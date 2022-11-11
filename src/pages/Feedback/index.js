@@ -15,7 +15,7 @@ export const Feedback = () => {
 
   return (
     <Container>
-      <Logo icon="home" to="/" />
+      <Logo icon="home" to="/home" />
       <Receptacle>
         <InputSearch />
       </Receptacle>
@@ -61,7 +61,7 @@ export const Feedback = () => {
         <Box>
           <h3>Avalie aqui os produtos recebidos</h3>
           <Rating size="big" rating={ratingNumber} setRatingNumber={setRatingNumber} />
-          <Link to="/">
+          <Link to="/home">
             <p>Avaliar mais tarde</p>
           </Link>
         </Box>

@@ -32,6 +32,9 @@ export const ImageContainer = styled.div`
   & > img:nth-child(2n + 1) {
     width: ${({ size }) => size || '32px'};
   }
+  & > img:nth-child(n + 1) {
+    width: ${({ sizeProduct }) => sizeProduct || '66px'};
+  }
 `;
 
 export const InfoProduct = styled.div`

@@ -14,7 +14,7 @@ export const Checkout = () => {
 
   return (
     <Container>
-      <Logo icon="home" to="/" />
+      <Logo icon="home" to="/home" />
       <Receptacle>
         <InputSearch />
       </Receptacle>
@@ -48,7 +48,7 @@ export const Checkout = () => {
           </h3>
         </Wrapper>
         <Box>
-          <Link to={`/`}>
+          <Link to={`/home`}>
             <Button backgroundColor={theme.palettes.secondaryPurple.main}>Cofirmar Pedido</Button>
           </Link>
           <Link to={`/seller/${id}`}>
