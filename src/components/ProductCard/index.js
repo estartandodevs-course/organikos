@@ -7,7 +7,7 @@ export const ProductCard = ({ product, size, onPlus, onMinus }) => {
         <Touchable onClick={onMinus}>
           <img src="/assets/icons/icons-amount/fewer.svg" alt="icon menos" />
         </Touchable>
-        <img src={product?.image} alt={`Imagem ${product?.name}`} />
+        <img src={product?.url} alt={`Imagem ${product?.name}`} />
         <Touchable onClick={onPlus}>
           <img src="/assets/icons/icons-amount/plus.svg" alt="icon mais" />
         </Touchable>
