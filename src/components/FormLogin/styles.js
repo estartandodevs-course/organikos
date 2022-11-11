@@ -33,7 +33,8 @@ export const Container = styled.form`
   flex-direction: column;
   gap: 19px;
   width: 100%;
-  padding: 38px;
+  height: 100vh;
+  padding: 38px 38px 0 38px;
   margin-top: 100px;
 
   & > span {
