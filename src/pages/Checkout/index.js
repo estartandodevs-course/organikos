@@ -4,9 +4,8 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
-import { Box, Container, Crate, Receptacle, Wrapper } from './styles';
+import { Box, Container, Crate, Wrapper } from './styles';
 import { infoOrder } from '../../mocks/infoOrder';
-import { InputSearch } from '../../components/InputSearch';
 
 export const Checkout = () => {
   const { id } = useParams();
@@ -14,10 +13,7 @@ export const Checkout = () => {
 
   return (
     <Container>
-      <Logo icon="home" to="/" />
-      <Receptacle>
-        <InputSearch />
-      </Receptacle>
+      <Logo icon="home" to="/home" />
       <Title icon="block" text="Informações sobre a compra" to="/seller/:id" />
       <Crate>
         <Wrapper>
@@ -48,7 +44,7 @@ export const Checkout = () => {
           </h3>
         </Wrapper>
         <Box>
-          <Link to={`/`}>
+          <Link to={`/home`}>
             <Button backgroundColor={theme.palettes.secondaryPurple.main}>Cofirmar Pedido</Button>
           </Link>
           <Link to={`/seller/${id}`}>

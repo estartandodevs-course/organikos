@@ -3,11 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div``;
 
 export const Case = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 25px;
-  gap: 16px;
+  display: none;
 
   h3 {
     display: none;
@@ -15,7 +11,13 @@ export const Case = styled.div`
     font-weight: 400;
   }
 
-  @media (max-width: 1442px) {
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    gap: 16px;
+
     h3 {
       display: block;
     }
@@ -36,14 +38,6 @@ export const Crate = styled.div`
   }
 `;
 
-export const Receptacle = styled.div`
-  margin-bottom: 32px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
 export const Cashier = styled.div`
   width: 320px;
   height: 104px;
@@ -56,7 +50,7 @@ export const Box = styled.div`
   align-items: center;
   margin: 50px 0 95px 0;
   text-align: center;
-  gap: 8px;
+  gap: 30px;
 
   h3 {
     font-weight: 500;
@@ -65,8 +59,6 @@ export const Box = styled.div`
   }
 
   p {
-    display: none;
-    margin-top: 48px;
     font-size: ${({ theme }) => theme.typography.h4.fontSize};
     color: ${({ theme }) => theme.palettes.secondaryPurple.v3};
     cursor: pointer;
@@ -115,7 +107,7 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media (max-width: 1442px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;

@@ -3,22 +3,21 @@ import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { OrderCard } from '../../components/OrderCard';
 import { Title } from '../../components/Title';
-import { Box, Case, Cashier, Container, Crate, Receptacle, Wrapper } from './styles';
+import { Box, Case, Cashier, Container, Crate, Wrapper } from './styles';
 import { historyList } from '../../mocks/historyList';
 import { Rating } from '../../components/Rating';
 import { useState } from 'react';
 import { infoOrder } from '../../mocks/infoOrder';
-import { InputSearch } from '../../components/InputSearch';
+import { Button } from '../../components/Button';
+import { useTheme } from 'styled-components';
 
 export const Feedback = () => {
   const [ratingNumber, setRatingNumber] = useState(0);
+  const theme = useTheme();
 
   return (
     <Container>
-      <Logo icon="home" to="/" />
-      <Receptacle>
-        <InputSearch />
-      </Receptacle>
+      <Logo icon="home" to="/home" />
       <Title text="Avalie sua Compra" />
       <Crate>
         <Wrapper>
@@ -61,8 +60,11 @@ export const Feedback = () => {
         <Box>
           <h3>Avalie aqui os produtos recebidos</h3>
           <Rating size="big" rating={ratingNumber} setRatingNumber={setRatingNumber} />
-          <Link to="/">
+          <Link to="/home">
             <p>Avaliar mais tarde</p>
+          </Link>
+          <Link to="/">
+            <Button backgroundColor={theme.palettes.secondaryPurple.main}>Salvar</Button>
           </Link>
         </Box>
       </Crate>

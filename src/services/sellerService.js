@@ -11,3 +11,11 @@ export const getSeller = id => {
 export const getProductsBySeller = id => {
   return api.get(`/product/${id}`);
 };
+
+export const getUserByEmail = email => {
+  return api.post(`/user/login`, { email });
+};
+
+export const createUser = body => {
+  return api.post(`/user`, { ...body });
+};

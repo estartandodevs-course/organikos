@@ -4,9 +4,8 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
-import { Box, Container, Crate, Receptacle, Wrapper } from './styles';
+import { Box, Container, Crate, Wrapper } from './styles';
 import { infoOrder } from '../../mocks/infoOrder';
-import { InputSearch } from '../../components/InputSearch';
 
 export const Details = () => {
   const theme = useTheme();
@@ -14,10 +13,7 @@ export const Details = () => {
 
   return (
     <Container>
-      <Logo icon="home" to="/" />
-      <Receptacle>
-        <InputSearch />
-      </Receptacle>
+      <Logo icon="home" to="/home" />
       <Title icon="block" text="Compra Finalizada" to="/checkout/:id" />
       <Crate>
         <Wrapper>
