@@ -55,12 +55,12 @@ export const Seller = () => {
         <Logo icon="bag" />
       </Kit>
       <Case>
-        <ProfileSeller to="/" />
+        <ProfileSeller to="/home" />
       </Case>
       <InputSearch />
       <Crate>
         <Left>
-          <InfoSeller to="/" />
+          <InfoSeller to="/home" />
           <ProductsCardWrapper backGroundColor={theme.palettes.primaryGreen.v5} id={id} />
         </Left>
         <Right>
@@ -88,7 +88,7 @@ export const Seller = () => {
                 <Link to={`/seller/${id}/checkout`}>
                   <Button backgroundColor={theme.palettes.secondaryPurple.main}> Comprar </Button>
                 </Link>
-                <Link to="/">
+                <Link to="/home">
                   <Button
                     onClick={() => removeAllProductsBySeller(seller)}
                     backgroundColor={theme.palettes.neutral.v2}

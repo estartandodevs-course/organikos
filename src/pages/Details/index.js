@@ -14,7 +14,7 @@ export const Details = () => {
 
   return (
     <Container>
-      <Logo icon="home" to="/" />
+      <Logo icon="home" to="/home" />
       <Receptacle>
         <InputSearch />
       </Receptacle>
