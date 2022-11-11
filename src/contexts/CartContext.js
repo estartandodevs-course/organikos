@@ -18,15 +18,15 @@ export const CartContextProvider = ({ children }) => {
       element => element?.id === product?.id && element?.seller_id === product.seller_id
     );
     if (!productExist) {
-      newCartList.push({ ...product, quantity: 1, cost: product.price });
+      newCartList.push({ ...product, cost: product.price });
     } else {
-      productExist.quantity += 1;
-      productExist.cost = productExist.price * productExist.quantity;
+      productExist.quantity += product.quantity;
+      productExist.cost += product.price;
     }
     setCartList(newCartList);
   };
 
-  const cartTotal = cartList.reduce((acc, curr) => curr.price * curr.quantity + acc, 0);
+  const cartTotal = cartList.reduce((acc, curr) => curr.cost + acc, 0.0);
 
   const removeProductToCart = product => {
     const newCartList = [...cartList];
@@ -34,9 +34,9 @@ export const CartContextProvider = ({ children }) => {
       element => element.id === product?.id && element?.seller_id === product?.seller_id
     );
 
-    if (productExist && productExist.quantity > 1) {
-      productExist.quantity -= 1;
-      productExist.cost = productExist.price * productExist.quantity;
+    if (productExist.quantity > 1 && productExist) {
+      productExist.quantity -= product.quantity;
+      productExist.cost -= product.price;
     } else {
       newCartList.splice(newCartList.indexOf(productExist), 1);
     }
