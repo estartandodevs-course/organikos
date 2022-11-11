@@ -6,8 +6,6 @@ import { Title } from '../../components/Title';
 import { Box, Case, Cashier, Container, Crate, Wrapper } from './styles';
 import { historyList } from '../../mocks/historyList';
 import { Rating } from '../../components/Rating';
-import { Receptacle } from '../../components/Receptacle';
-import { InputSearch } from '../../components/InputSearch';
 import { useState } from 'react';
 import { infoOrder } from '../../mocks/infoOrder';
 import { Button } from '../../components/Button';
@@ -20,9 +18,6 @@ export const Feedback = () => {
   return (
     <Container>
       <Logo icon="home" to="/home" />
-      <Receptacle>
-        <InputSearch />
-      </Receptacle>
       <Title text="Avalie sua Compra" />
       <Crate>
         <Wrapper>
