@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { getSeller } from '../../services/sellerService';
 import { InputForm } from '../../components/InputForm';
-import { Bin, Box, Bunker, Case, Container, Crate, FilterWrapper, Kit, Left, Right, Safe } from './styles';
+import { Bin, Box, Bunker, Case, Container, Crate, FilterWrapper, Garner, Kit, Left, Right, Safe } from './styles';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { useTheme } from 'styled-components';
@@ -19,6 +19,8 @@ import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
 import { Bag } from '../../components/Bag';
 import { InfoSeller } from '../../components/InfoSeller';
+import { MainWrapper } from '../../templates/MainWrapper';
+import { LogoAnimation } from '../../components/LogoAnimation';
 
 export const Seller = () => {
   const [seller, setSeller] = useState({});
@@ -26,7 +28,7 @@ export const Seller = () => {
   const [isError, setIsError] = useState(false);
   const { id } = useParams();
   const theme = useTheme();
-  const { removeAllProductsBySeller } = useContext(CartContext);
+  const { removeAllProductsBySeller, cartTotal } = useContext(CartContext);
 
   useEffect(() => {
     (async () => {
@@ -47,8 +49,13 @@ export const Seller = () => {
   }
 
   if (isLoading) {
-    return <></>;
+    return (
+      <MainWrapper>
+        <LogoAnimation />
+      </MainWrapper>
+    );
   }
+
   return (
     <Container>
       <Kit>
@@ -69,21 +76,25 @@ export const Seller = () => {
           </FilterWrapper>
           <ProductCardList />
           <Bin>
-            <Title text="Total da compra - R$102,50" />
-            <Bag />
+            <Title text={`Total da compra - R$${cartTotal.toFixed(2)}`} />
+            <Bag userId={id} />
             <Title text="Formas de Entrega" />
           </Bin>
           <h5>Formas de Entrega</h5>
-          <Checklist optionsList={seller?.distribution} name="entrega" />
+          <Garner>
+            <Checklist optionsList={seller?.distribution} name="entrega" />
+          </Garner>
           <Bin>
             <Title text="Formas de Pagamento" />
           </Bin>
           <h5>Formas de Pagamento</h5>
-          <Checklist optionsList={seller?.payment} name="pagamento" />
+          <Garner>
+            <Checklist optionsList={seller?.payment} name="pagamento" />
+          </Garner>
           <Safe>
             <InputForm size="medium" type="text" text="Insira aqui seu cupom de desconto" />
             <Bunker>
-              <h4>Total da compra - R$102,50</h4>
+              <h4>{`Total da compra - R$${cartTotal.toFixed()}`}</h4>
               <Box>
                 <Link to={`/seller/${id}/checkout`}>
                   <Button backgroundColor={theme.palettes.secondaryPurple.main}> Comprar </Button>
@@ -103,7 +114,9 @@ export const Seller = () => {
         </Right>
       </Crate>
       <Footer> Organikos </Footer>
-      <Modal name={seller.contact.name}>{seller.contact.desc}</Modal>
+      <Modal name={seller?.contact?.name}>{seller?.contact?.desc}</Modal>
     </Container>
   );
 };
+
+Seller.displayName = 'Seller';

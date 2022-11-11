@@ -19,6 +19,12 @@ export const Input = styled.input`
   ${({ size }) => css`
     ${!!size && modifierContainer[size]()}
   `}
+
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 const modifierContainer = {
