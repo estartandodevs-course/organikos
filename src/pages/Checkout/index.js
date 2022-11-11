@@ -4,9 +4,8 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
-import { Box, Container, Crate, Receptacle, Wrapper } from './styles';
+import { Box, Container, Crate, Wrapper } from './styles';
 import { infoOrder } from '../../mocks/infoOrder';
-import { InputSearch } from '../../components/InputSearch';
 
 export const Checkout = () => {
   const { id } = useParams();
@@ -15,9 +14,6 @@ export const Checkout = () => {
   return (
     <Container>
       <Logo icon="home" to="/" />
-      <Receptacle>
-        <InputSearch />
-      </Receptacle>
       <Title icon="block" text="Informações sobre a compra" to="/seller/:id" />
       <Crate>
         <Wrapper>
