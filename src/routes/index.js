@@ -1,12 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
-import { BagPage, Checkout, Details, Feedback, Historic, Home, Seller } from '../pages';
-<<<<<<< HEAD
-import { Login } from '../pages/Login';
-=======
-import { PersonalData } from '../pages/DadosPessoais';
-import { Adresses } from '../pages/Enderecos';
-import { Payments } from '../pages/Pagamentos';
->>>>>>> develop
+import {
+  BagPage,
+  Checkout,
+  Details,
+  Feedback,
+  Historic,
+  Home,
+  Seller,
+  PersonalData,
+  Adresses,
+  Payments,
+  Login,
+} from '../pages';
 
 export const Routers = () => {
   return (
