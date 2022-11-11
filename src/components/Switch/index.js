@@ -1,24 +1,17 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Switch from 'react-switch';
 import { Container } from './styles';
 
-export class SwitchExample extends Component {
-  constructor() {
-    super();
-    this.state = { checked: false };
-    this.handleChange = this.handleChange.bind(this);
-  }
+export const SwitchCheck = ({ text }) => {
+  const [checked, setChecked] = useState(false);
+  const handleChange = nextChecked => {
+    setChecked(nextChecked);
+  };
 
-  handleChange(checked) {
-    this.setState({ checked });
-  }
-
-  render() {
-    return (
-      <Container>
-        <span>Deseja receber Notificações via WhatsApp?</span>
-        <Switch onChange={this.handleChange} checked={this.state.checked} />
-      </Container>
-    );
-  }
-}
+  return (
+    <Container className="example">
+      <span>{text}</span>
+      <Switch onChange={handleChange} checked={checked} />
+    </Container>
+  );
+};

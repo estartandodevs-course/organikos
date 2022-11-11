@@ -5,7 +5,7 @@ import { Footer } from '../../components/Footer';
 import { InputForm } from '../../components/InputForm';
 import { Logo } from '../../components/Logo';
 import { NavForm } from '../../components/NavForm';
-import { SwitchExample } from '../../components/Switch';
+import { SwitchCheck } from '../../components/Switch';
 import { FormContainer, Crate, Right, Left, Wrapper, BoxSwitch, Container } from './styles';
 
 export const PersonalData = () => {
@@ -39,7 +39,7 @@ export const PersonalData = () => {
                 <InputForm size="small" type="number" text="(79) 999646105" />
               </Crate>
               <BoxSwitch>
-                <SwitchExample />
+                <SwitchCheck text="Deseja receber Notificações via WhatsApp?" />
               </BoxSwitch>
             </Wrapper>
           </Left>
