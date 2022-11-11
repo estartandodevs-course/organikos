@@ -36,14 +36,6 @@ export const Crate = styled.div`
   }
 `;
 
-export const Receptacle = styled.div`
-  margin-bottom: 32px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
 export const Cashier = styled.div`
   width: 320px;
   height: 104px;

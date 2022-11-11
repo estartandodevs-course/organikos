@@ -3,12 +3,11 @@ import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { OrderCard } from '../../components/OrderCard';
 import { Title } from '../../components/Title';
-import { Box, Case, Cashier, Container, Crate, Receptacle, Wrapper } from './styles';
+import { Box, Case, Cashier, Container, Crate, Wrapper } from './styles';
 import { historyList } from '../../mocks/historyList';
 import { Rating } from '../../components/Rating';
 import { useState } from 'react';
 import { infoOrder } from '../../mocks/infoOrder';
-import { InputSearch } from '../../components/InputSearch';
 
 export const Feedback = () => {
   const [ratingNumber, setRatingNumber] = useState(0);
@@ -16,9 +15,6 @@ export const Feedback = () => {
   return (
     <Container>
       <Logo icon="home" to="/" />
-      <Receptacle>
-        <InputSearch />
-      </Receptacle>
       <Title text="Avalie sua Compra" />
       <Crate>
         <Wrapper>
