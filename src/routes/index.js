@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { BagPage, Checkout, Details, Feedback, Historic, Home, Seller } from '../pages';
-import { PersonalData } from '../pages/DadosPessoais';
-import { Adresses } from '../pages/Enderecos';
-import { Payments } from '../pages/Pagamentos';
+import { PersonalData } from '../pages/PersonalData';
+import { Adresses } from '../pages/Adresses';
+import { Payments } from '../pages/Payments';
 
 export const Routers = () => {
   return (
