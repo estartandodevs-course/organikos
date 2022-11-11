@@ -6,7 +6,7 @@ import { BasicSchema } from '../../schemas';
 import { Container, InputControl } from './styles';
 
 export const FormLogin = ({ children }) => {
-  const { signed, signin, error } = useContext(AuthContext);
+  const { user, signin, error } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const onSubmit = (values, actions) => {
@@ -24,10 +24,10 @@ export const FormLogin = ({ children }) => {
   });
 
   useEffect(() => {
-    if (signed) {
+    if (Object.keys(user).length) {
       navigate('/home');
     }
-  }, [signed]);
+  }, [user]);
 
   return (
     <Container onSubmit={handleSubmit}>
