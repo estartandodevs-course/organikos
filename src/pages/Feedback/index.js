@@ -8,9 +8,12 @@ import { historyList } from '../../mocks/historyList';
 import { Rating } from '../../components/Rating';
 import { useState } from 'react';
 import { infoOrder } from '../../mocks/infoOrder';
+import { Button } from '../../components/Button';
+import { useTheme } from 'styled-components';
 
 export const Feedback = () => {
   const [ratingNumber, setRatingNumber] = useState(0);
+  const theme = useTheme();
 
   return (
     <Container>
@@ -59,6 +62,9 @@ export const Feedback = () => {
           <Rating size="big" rating={ratingNumber} setRatingNumber={setRatingNumber} />
           <Link to="/">
             <p>Avaliar mais tarde</p>
+          </Link>
+          <Link to="/">
+            <Button backgroundColor={theme.palettes.secondaryPurple.main}>Salvar</Button>
           </Link>
         </Box>
       </Crate>

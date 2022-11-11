@@ -48,7 +48,7 @@ export const Box = styled.div`
   align-items: center;
   margin: 50px 0 95px 0;
   text-align: center;
-  gap: 8px;
+  gap: 30px;
 
   h3 {
     font-weight: 500;
@@ -57,8 +57,6 @@ export const Box = styled.div`
   }
 
   p {
-    display: none;
-    margin-top: 48px;
     font-size: ${({ theme }) => theme.typography.h4.fontSize};
     color: ${({ theme }) => theme.palettes.secondaryPurple.v3};
     cursor: pointer;
