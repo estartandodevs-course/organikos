@@ -3,11 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div``;
 
 export const Case = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 25px;
-  gap: 16px;
+  display: none;
 
   h3 {
     display: none;
@@ -15,7 +11,13 @@ export const Case = styled.div`
     font-weight: 400;
   }
 
-  @media (max-width: 1442px) {
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    gap: 16px;
+
     h3 {
       display: block;
     }
@@ -105,7 +107,7 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media (max-width: 1442px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
