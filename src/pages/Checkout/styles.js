@@ -2,14 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const Receptacle = styled.div`
-  margin-bottom: 32px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
 export const Crate = styled.div`
   display: flex;
   margin: 145px 194px;

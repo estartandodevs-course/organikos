@@ -4,9 +4,10 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Title } from '../../components/Title';
-import { Box, Container, Crate, Receptacle, Wrapper } from './styles';
-import { infoOrder } from '../../mocks/infoOrder';
+import { Receptacle } from '../../components/Receptacle';
 import { InputSearch } from '../../components/InputSearch';
+import { Box, Container, Crate, Wrapper } from './styles';
+import { infoOrder } from '../../mocks/infoOrder';
 
 export const Checkout = () => {
   const { id } = useParams();

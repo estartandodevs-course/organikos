@@ -7,7 +7,7 @@ export const Container = styled.div`
   gap: 16px;
   width: 100%;
   height: 52px;
-  background: ${({ theme }) => theme.palettes.primaryGreen.v6};
+  background: ${({ theme }) => theme.palettes.primaryGreen.v5};
 
   p {
     font-size: ${({ theme }) => theme.typography.h1.fontSize};

@@ -3,15 +3,19 @@ import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { OrderCard } from '../../components/OrderCard';
 import { Title } from '../../components/Title';
-import { Box, Case, Cashier, Container, Crate, Receptacle, Wrapper } from './styles';
+import { Box, Case, Cashier, Container, Crate, Wrapper } from './styles';
 import { historyList } from '../../mocks/historyList';
 import { Rating } from '../../components/Rating';
+import { Receptacle } from '../../components/Receptacle';
+import { InputSearch } from '../../components/InputSearch';
 import { useState } from 'react';
 import { infoOrder } from '../../mocks/infoOrder';
-import { InputSearch } from '../../components/InputSearch';
+import { Button } from '../../components/Button';
+import { useTheme } from 'styled-components';
 
 export const Feedback = () => {
   const [ratingNumber, setRatingNumber] = useState(0);
+  const theme = useTheme();
 
   return (
     <Container>
@@ -63,6 +67,9 @@ export const Feedback = () => {
           <Rating size="big" rating={ratingNumber} setRatingNumber={setRatingNumber} />
           <Link to="/home">
             <p>Avaliar mais tarde</p>
+          </Link>
+          <Link to="/">
+            <Button backgroundColor={theme.palettes.secondaryPurple.main}>Salvar</Button>
           </Link>
         </Box>
       </Crate>

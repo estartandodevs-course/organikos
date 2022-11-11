@@ -14,14 +14,6 @@ export const Crate = styled.div`
   }
 `;
 
-export const Receptacle = styled.div`
-  margin-bottom: 32px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

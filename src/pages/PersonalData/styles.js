@@ -29,22 +29,11 @@ export const Crate = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   gap: 10px;
-
-  span {
-    font-weight: 400;
-    font-size: ${({ theme }) => theme.typography.h5.fontSize};
-  }
 `;
 
 export const Box = styled.div``;
 
-export const BoxSwitch = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100px;
-`;
+export const BoxSwitch = styled.div``;
 
 export const Container = styled.div`
   width: 100%;
