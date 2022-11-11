@@ -7,20 +7,23 @@ import theme from './styles/theme';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import { CartContextProvider } from './contexts/CartContext';
 import { FilterContextProvider } from './contexts/FilterContext';
+import { AuthContextProvider } from './contexts/AuthContext';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <SkeletonTheme baseColor="#838B2F" highlightColor="#93A236">
-    <FilterContextProvider>
-      <CartContextProvider>
-        <BrowserRouter>
-          <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <App />
-          </ThemeProvider>
-        </BrowserRouter>
-      </CartContextProvider>
-    </FilterContextProvider>
+    <AuthContextProvider>
+      <FilterContextProvider>
+        <CartContextProvider>
+          <BrowserRouter>
+            <ThemeProvider theme={theme}>
+              <GlobalStyles />
+              <App />
+            </ThemeProvider>
+          </BrowserRouter>
+        </CartContextProvider>
+      </FilterContextProvider>
+    </AuthContextProvider>
   </SkeletonTheme>
 );
