@@ -6,6 +6,6 @@ export * from './Feedback';
 export * from './Historic';
 export * from './Seller';
 export * from './PersonalData';
-export * from './Adresses';
+export * from './Address';
 export * from './Payments';
 export * from './Login';

@@ -47,7 +47,7 @@ export const PersonalData = () => {
             </Wrapper>
           </Left>
           <Right>
-            <Link to="/adress">
+            <Link to="/address">
               <Button type="submit" backgroundColor={theme.palettes.secondaryPurple.main}>
                 Salvar
               </Button>

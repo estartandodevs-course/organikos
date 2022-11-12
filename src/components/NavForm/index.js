@@ -8,7 +8,7 @@ const links = [
   },
   {
     name: 'Endereços',
-    path: '/adress',
+    path: '/address',
   },
   {
     name: 'Pagamentos',

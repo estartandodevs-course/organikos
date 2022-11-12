@@ -9,7 +9,7 @@ import { NavForm } from '../../components/NavForm';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Container, Crate, FormContainer, Left, Right, Wrapper } from './styles';
 
-export const Adresses = () => {
+export const Address = () => {
   const { user } = useContext(AuthContext);
   const theme = useTheme();
   return (

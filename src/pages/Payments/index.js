@@ -33,12 +33,12 @@ export const Payments = () => {
             <InputForm size="big" type="text" text="Apelido do cartão (opcional)" />
           </Left>
           <Right>
-            <Link to="/">
+            <Link to="/home">
               <Button type="submit" backgroundColor={theme.palettes.secondaryPurple.main}>
                 Salvar
               </Button>
             </Link>
-            <Link to="/enderecos">
+            <Link to="/address">
               <Button type="button" backgroundColor={theme.palettes.neutral.v2} color={theme.palettes.black}>
                 Cancelar
               </Button>
