@@ -3,12 +3,14 @@ import { Tags } from '../Tags';
 import { Rating } from '../Rating';
 import { Wrapper, CategoriesWrapper, MarketInfos, MarketWrapper, SellerAvatar } from './styles';
 import { useTheme } from 'styled-components';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Typography } from '../Typography';
+import { FilterContext } from '../../contexts/FilterContext';
 
 export const CardSeller = ({ seller }) => {
   const [isFavorite, setIsFavorite] = useState(seller?.rating);
+  const { resetSearchTerm } = useContext(FilterContext);
   const theme = useTheme();
 
   return (
@@ -25,7 +27,7 @@ export const CardSeller = ({ seller }) => {
         <MarketInfos>
           <div>
             <Rating size="small" rating={seller?.rating} />
-            <Link to={`/seller/${seller?.sellerId}`}>
+            <Link to={`/seller/${seller?.sellerId}`} onClick={resetSearchTerm}>
               <Typography variant={'h2Medium'}>{seller?.contact?.name}</Typography>
             </Link>
           </div>
