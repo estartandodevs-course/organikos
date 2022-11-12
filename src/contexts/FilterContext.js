@@ -16,8 +16,12 @@ export const FilterContextProvider = ({ children }) => {
     }
     setTagFilter(copyArray);
   };
+
+  const resetSearchTerm = () => {
+    setSearchTerm('');
+  };
   return (
-    <FilterContext.Provider value={{ searchTerm, setSearchTerm, tagFilter, handleIsTouchable }}>
+    <FilterContext.Provider value={{ searchTerm, setSearchTerm, tagFilter, handleIsTouchable, resetSearchTerm }}>
       {children}
     </FilterContext.Provider>
   );
