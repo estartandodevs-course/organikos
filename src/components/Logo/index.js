@@ -12,7 +12,7 @@ export const Logo = ({ icon, to }) => {
 
   return (
     <Container>
-      <Image src="../assets/images/logo.png" alt="logo" />
+      <Image src="../../assets/images/logo.png" alt="logo" />
       <Title> O lugar ideal para quem busca produtos orgânicos, direto com o produtor. </Title>
       <Box>
         <Wrapper onClick={() => navigate('/personaldata')}>
@@ -20,7 +20,7 @@ export const Logo = ({ icon, to }) => {
           <p>{user?.name}</p>
         </Wrapper>
         <Link to={to}>
-          <img src={`../assets/icons/icons-profile/${icon}.svg`} alt="icon car" />
+          <img src={`../../assets/icons/icons-profile/${icon}.svg`} alt="icon car" />
         </Link>
       </Box>
     </Container>
