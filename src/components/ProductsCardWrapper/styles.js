@@ -8,6 +8,7 @@ export const Container = styled.section`
   overflow-y: scroll;
   background: ${({ backGroundColor }) => backGroundColor};
   border-radius: 10px;
+  margin: 0 auto;
 `;
 
 export const Wrapper = styled.section`
