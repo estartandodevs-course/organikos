@@ -4,15 +4,15 @@ import { Link, useLocation } from 'react-router-dom';
 const links = [
   {
     name: 'Dados pessoais',
-    path: '/dadospessoais',
+    path: '/personaldata',
   },
   {
     name: 'Endereços',
-    path: '/enderecos',
+    path: '/address',
   },
   {
     name: 'Pagamentos',
-    path: '/pagamentos',
+    path: '/payment',
   },
 ];
 

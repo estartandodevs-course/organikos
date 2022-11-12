@@ -21,6 +21,8 @@ import { Bag } from '../../components/Bag';
 import { InfoSeller } from '../../components/InfoSeller';
 import { MainWrapper } from '../../templates/MainWrapper';
 import { LogoAnimation } from '../../components/LogoAnimation';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Seller = () => {
   const [seller, setSeller] = useState({});
@@ -115,6 +117,19 @@ export const Seller = () => {
       </Crate>
       <Footer> Organikos </Footer>
       <Modal name={seller?.contact?.name}>{seller?.contact?.desc}</Modal>
+      <ToastContainer
+        toastStyle={{ backgroundColor: theme.palettes.secondaryPurple.v3, color: 'white' }}
+        position="top-center"
+        autoClose={500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </Container>
   );
 };

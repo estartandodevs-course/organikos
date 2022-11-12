@@ -8,7 +8,7 @@ import {
   Home,
   Seller,
   PersonalData,
-  Adresses,
+  Address,
   Payments,
   Login,
 } from '../pages';
@@ -24,9 +24,9 @@ export const Routers = () => {
       <Route path="/historic" element={<Historic />} />
       <Route path="/historic/:id" element={<Details />} />
       <Route path="/historic/:id/feedback" element={<Feedback />} />
-      <Route path="/dadospessoais" element={<PersonalData />} />
-      <Route path="/enderecos" element={<Adresses />} />
-      <Route path="/pagamentos" element={<Payments />} />
+      <Route path="/personaldata" element={<PersonalData />} />
+      <Route path="/address" element={<Address />} />
+      <Route path="/payment" element={<Payments />} />
     </Routes>
   );
 };

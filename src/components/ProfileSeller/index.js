@@ -39,8 +39,8 @@ export const ProfileSeller = ({ to = '/' }) => {
         <Box>
           <NameSeller>{seller?.contact?.name} </NameSeller>
           <InfoSeller>
-            {seller?.address?.street}, n*{seller?.address?.number} - {seller?.address?.neighborhood},
-            {seller?.address?.city}
+            {seller?.contact?.address?.street}, n*{seller?.contact?.address?.number} -{' '}
+            {seller?.contact?.address?.neighborhood},{seller?.contact?.address?.city}
           </InfoSeller>
           <Km>3km</Km>
         </Box>

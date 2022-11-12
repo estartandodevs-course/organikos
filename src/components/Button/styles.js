@@ -14,6 +14,6 @@ export const ButtonStyled = styled.button`
   transition: all 0.1s ease-in-out;
 
   &:hover {
-    background-color: ${({ backgroundColorHover, theme }) => backgroundColorHover || theme.palettes.primaryGreen.main};
+    filter: brightness(1.2);
   }
 `;
