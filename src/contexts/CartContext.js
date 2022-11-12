@@ -32,10 +32,11 @@ export const CartContextProvider = ({ children }) => {
       element => element?.id === product?.id && element?.seller_id === product.seller_id
     );
     if (!productExist) {
-      newCartList.push({ ...product, cost: product.price });
+      newCartList.push({ ...product, cost: product.price, items: 1, qtdInitial: product.quantity });
     } else {
-      productExist.quantity += product.quantity;
       productExist.cost += product.price;
+      productExist.items += 1;
+      productExist.quantity = productExist.qtdInitial * productExist.items;
     }
     setCartList(newCartList);
     notify('Item adicionado ao carrinho');
@@ -49,9 +50,10 @@ export const CartContextProvider = ({ children }) => {
       element => element.id === product?.id && element?.seller_id === product?.seller_id
     );
 
-    if (productExist.quantity > 1 && productExist) {
-      productExist.quantity -= product.quantity;
+    if (productExist && productExist.items > 1) {
       productExist.cost -= product.price;
+      productExist.items -= 1;
+      productExist.quantity = productExist.qtdInitial * productExist.items;
       notify('Quantidade removida do carrinho');
     } else {
       newCartList.splice(newCartList.indexOf(productExist), 1);
