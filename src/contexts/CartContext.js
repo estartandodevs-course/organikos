@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { createContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
 export const CartContext = createContext();
 
@@ -11,6 +12,19 @@ export const CartContextProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('dataCart', JSON.stringify(cartList));
   }, [cartList]);
+
+  const notify = message => {
+    toast(message, {
+      position: 'top-center',
+      autoClose: 200,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'colored',
+    });
+  };
 
   const addProductToCart = product => {
     const newCartList = [...cartList];
@@ -24,6 +38,7 @@ export const CartContextProvider = ({ children }) => {
       productExist.cost += product.price;
     }
     setCartList(newCartList);
+    notify('Item adicionado ao carrinho');
   };
 
   const cartTotal = cartList.reduce((acc, curr) => curr.cost + acc, 0.0);
@@ -37,8 +52,10 @@ export const CartContextProvider = ({ children }) => {
     if (productExist.quantity > 1 && productExist) {
       productExist.quantity -= product.quantity;
       productExist.cost -= product.price;
+      notify('Quantidade removida do carrinho');
     } else {
       newCartList.splice(newCartList.indexOf(productExist), 1);
+      notify('Item excluído do carrinho');
     }
     setCartList(newCartList);
   };
