@@ -84,19 +84,19 @@ export const Seller = () => {
           </Bin>
           <h5>Formas de Entrega</h5>
           <Garner>
-            <Checklist optionsList={seller?.distribution} name="entrega" />
+            <Checklist optionsList={seller?.distribution} name="distribution" />
           </Garner>
           <Bin>
             <Title text="Formas de Pagamento" />
           </Bin>
           <h5>Formas de Pagamento</h5>
           <Garner>
-            <Checklist optionsList={seller?.payment} name="pagamento" />
+            <Checklist optionsList={seller?.payment} name="payment" />
           </Garner>
           <Safe>
             <InputForm size="medium" type="text" text="Insira aqui seu cupom de desconto" />
             <Bunker>
-              <h4>{`Total da compra - R$${cartTotal.toFixed()}`}</h4>
+              <h4>{`Total da compra - R$${cartTotal.toFixed(2)}`}</h4>
               <Box>
                 <Link to={`/seller/${id}/checkout`}>
                   <Button backgroundColor={theme.palettes.secondaryPurple.main}> Comprar </Button>
