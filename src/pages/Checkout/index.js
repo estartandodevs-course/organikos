@@ -78,7 +78,7 @@ export const Checkout = () => {
           </ul>
           <h3>
             Total da compra:
-            <span>R${cartTotal.toFixed()}</span>
+            <span>R${cartTotal.toFixed(2)}</span>
           </h3>
         </Wrapper>
         <Box>

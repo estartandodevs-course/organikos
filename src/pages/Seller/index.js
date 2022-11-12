@@ -96,7 +96,7 @@ export const Seller = () => {
           <Safe>
             <InputForm size="medium" type="text" text="Insira aqui seu cupom de desconto" />
             <Bunker>
-              <h4>{`Total da compra - R$${cartTotal.toFixed()}`}</h4>
+              <h4>{`Total da compra - R$${cartTotal.toFixed(2)}`}</h4>
               <Box>
                 <Link to={`/seller/${id}/checkout`}>
                   <Button backgroundColor={theme.palettes.secondaryPurple.main}> Comprar </Button>
