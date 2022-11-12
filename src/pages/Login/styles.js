@@ -40,6 +40,10 @@ export const ContainerRight = styled.div`
     & > h1 {
       display: block;
     }
+
+    & > footer {
+      display: none;
+    }
   }
 `;
 
