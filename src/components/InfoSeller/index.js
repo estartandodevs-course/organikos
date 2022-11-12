@@ -37,8 +37,8 @@ export const InfoSeller = () => {
         <Box>
           <NameSeller>{seller?.contact?.name} </NameSeller>
           <Info>
-            {seller?.address?.street}, n*{seller?.address?.number} - {seller?.address?.neighborhood},
-            {seller?.address?.city}
+            {seller?.contact?.address?.street}, n*{seller?.contact?.address?.number} -{' '}
+            {seller?.contact?.address?.neighborhood},{seller?.contact?.address?.city}
           </Info>
           <Km>3km</Km>
         </Box>
