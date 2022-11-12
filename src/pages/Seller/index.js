@@ -84,14 +84,14 @@ export const Seller = () => {
           </Bin>
           <h5>Formas de Entrega</h5>
           <Garner>
-            <Checklist optionsList={seller?.distribution} name="entrega" />
+            <Checklist optionsList={seller?.distribution} name="distribution" />
           </Garner>
           <Bin>
             <Title text="Formas de Pagamento" />
           </Bin>
           <h5>Formas de Pagamento</h5>
           <Garner>
-            <Checklist optionsList={seller?.payment} name="pagamento" />
+            <Checklist optionsList={seller?.payment} name="payment" />
           </Garner>
           <Safe>
             <InputForm size="medium" type="text" text="Insira aqui seu cupom de desconto" />
